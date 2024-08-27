@@ -61,11 +61,11 @@
                       <i class="bi bi-circle"></i><span>Otros Indicadores</span>
                     </a>
                   </li>
-                  <li>
+<!--                   <li>
                     <a href="tables-isr.php">
                       <i class="bi bi-circle"></i><span>Tabla ISR Pers.Fis.</span>
                     </a>
-                  </li> 
+                  </li> --> 
                 <?php } ?>
 
         </ul>

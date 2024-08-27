@@ -61,8 +61,7 @@ if (@!$_SESSION['usuario'])
 
               <div class="row mb-3">
                   <label class="col-sm-2 col-form-label">Registros de ISR</label>
-                  <label class="text-bg-primary p-2 col-sm-2 col-form-label">Total <strong><?= $total_isrs; ?> </strong> ISR's </label>
-                  
+                  <label class="text-bg-primary p-2 col-sm-2 col-form-label">Total <strong><?= $total_isrs; ?> </strong> ISR's </label>                  
               </div>
         <!-- Table with stripped rows  -->
               <table class="table datatable table-striped table-hover">
@@ -121,6 +120,9 @@ if (@!$_SESSION['usuario'])
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->
+              <div class="row">                
+                  <div class="col-sm-12 alert alert-info alert-dismissible fade show" role="alert">Seleccionar en la columna de ejercicio para actualizar, Los datos mostrados son responsabilidad de usuario supervisor</div>
+              </div>
 
             </div>
           </div>

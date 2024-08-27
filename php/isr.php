@@ -102,13 +102,7 @@
         $isr->setcuota($isr_arreglo['cuota']);
         $isr->setpor($isr_arreglo['por']);
         $isr->setestatus($isr_arreglo['estatus']);
-        $isr->setjul($isr_arreglo['jul']);
-        $isr->setago($isr_arreglo['ago']);
-        $isr->setsep($isr_arreglo['sep']);
-        $isr->setoct($isr_arreglo['oct']);
-        $isr->setnov($isr_arreglo['nov']);
-        $isr->setdic($isr_arreglo['dic']);
-        
+             
         return $isr;
      }  
      
@@ -126,7 +120,7 @@
 }
 else{
     $sql = "INSERT INTO tabla_isr(anio, fila, li, ls, cuota, por, estatus, jul, ago, sep, oct, nov, dic) VALUES 
-    ('".$this->anio."','".$this->fila."','".$this->li."','".$this->ls."','".$this->cuota."','".$this->por."','".$this->estatus."','".$this->jul."','".$this->ago."','".$this->sep."','".$this->oct."','".$this->nov."','".$this->dic."')";  
+    ('".$this->anio."','".$this->fila."','".$this->li."','".$this->ls."','".$this->cuota."','".$this->por."','".$this->estatus."')";  
     $resultado = $this->mysqli->query($sql);
 }
     $sql = $this->mysqli->close();
@@ -138,9 +132,11 @@ else{
         $this->conectar();
         //$sql = "UPDATE isrs SET anio ='INACTIVO' WHERE id = ".$this->id_em;
 
-        $sql = "UPDATE tabla_isr SET anio ='".$this->anio."', fila ='".$this->fila."', li ='".$this->li."', ls ='".$this->ls."', cuota ='".$this->cuota."', por ='".$this->por."', estatus ='".$this->estatus."', jul ='".$this->jul."', ago ='".$this->ago."', sep ='".$this->sep."', oct ='".$this->oct."', nov ='".$this->nov."', dic ='".$this->dic."' WHERE id = ".$this->id;
+        $sql = "UPDATE tabla_isr SET li ='".$this->li."', ls ='".$this->ls."', cuota ='".$this->cuota."', por ='".$this->por."', estatus ='".$this->estatus."' WHERE id = ".$this->id;
         $resultado = $this->mysqli->query($sql);
         $sql = $this->mysqli->close();
     } 
  }
+
+  //  anio ='".$this->anio."', fila ='".$this->fila."',
   ?>    

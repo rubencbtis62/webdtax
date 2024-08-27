@@ -62,6 +62,9 @@ if (@!$_SESSION['usuario'])
               <div class="row mb-3">
                   <label class="col-sm-2 col-form-label">Acumulados</label>
                   <label class="text-bg-success p-2 col-sm-2 col-form-label">Total <strong><?= $total_recargos; ?> </strong> Registros</label>
+                  <div class="col-8 text-end">
+                     <a href="alta-recargos.php"><button type="button" class="btn btn-secondary"><i class="bi bi-plus-lg me-1"></i> Agregar</button></a>
+                  </div>
                   
               </div>
         <!-- Table with stripped rows  -->

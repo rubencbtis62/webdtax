@@ -1,9 +1,9 @@
 <?php 
   include('php/sql.php');
-  include('php/inpc.php');
+  include('php/isr.php');
 
   $id = $_GET['id'];
-  $inpc = inpc::obtenerporid($id);
+  $isr = isr::obtenerporid($id);
 
  
   $tipoejercicios = ['2019','2020','2021','2022','2023','2024'];
@@ -50,7 +50,7 @@ if (@!$_SESSION['usuario'])
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Modulo Actualización de inpcs</h5>
+              <h5 class="card-title">Modulo Actualización de ISR</h5>
               <p>Este modulo permite actualizar solo al responsable de modificar indicadores.</p>
             </div>
           </div>
@@ -62,7 +62,7 @@ if (@!$_SESSION['usuario'])
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">NOTA</h5>
-              <p>Cualquier modificación se enviara un correo al Reposable de inpcs, asi como al administrador.</p>
+              <p>Cualquier modificación se enviará un correo de notificación al Responsable de isrs, asi como al administrador.</p>
             </div>
           </div>
 
@@ -73,13 +73,13 @@ if (@!$_SESSION['usuario'])
 
        <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Actualizar inpc</h5>
+              <h5 class="card-title">Actualizar ISR</h5>
 
               <!-- General Form Elements -->
 
-              <form role="form" action="php/cinpc.php" method="POST">
-              <input type="hidden" name="id" value="<?= $inpc->getid(); ?>">
-              <input type="hidden" name="accion" value="actualizarinpc">
+              <form role="form" action="php/cisr.php" method="POST">
+              <input type="hidden" name="id" value="<?= $isr->getid(); ?>">
+              <input type="hidden" name="accion" value="actualizarisr">
 
             
 
@@ -90,7 +90,7 @@ if (@!$_SESSION['usuario'])
                       <option selected>Seleccionar</option>
                       <?php 
                         foreach ($tipoejercicios as $tipoejercicio) {
-                            if ($tipoejercicio == $inpc->getanio())
+                            if ($tipoejercicio == $isr->getanio())
                                 echo "<option selected>".$tipoejercicio."</option>";
                             else    
                                 echo "<option>".$tipoejercicio."</option>";
@@ -101,70 +101,31 @@ if (@!$_SESSION['usuario'])
               </div>
 
                
-              <!-- <?php   //var_dump($inpc); ?> -->
+              <!-- <?php   //var_dump($isr); ?> -->
 
               <div class="row mb-3">
                 
                 <div class="col-sm-2">
-                  <label for="ene" class="form-label">Enero</label>
-                  <input class="form-control" type="text" name="ene" value="<?= $inpc->getene(); ?>" >                    
+                  <label for="ene" class="form-label">Limite Inferior</label>
+                  <input class="form-control" type="text" name="li" value="<?= $isr->getli(); ?>" >                    
                 </div>               
                 <div class="col-sm-2">
-                <label for="feb" class="form-label">Febrero</label>
-                  <input class="form-control" type="text" name="feb" value="<?= $inpc->getfeb(); ?>" >
+                <label for="feb" class="form-label">Limite Superior</label>
+                  <input class="form-control" type="text" name="ls" value="<?= $isr->getls(); ?>" >
                 </div>
                 
                 <div class="col-sm-2">
-                <label for="mar" class="form-label">Marzo</label>
-                  <input class="form-control" type="text" name="mar" value="<?= $inpc->getmar(); ?>" >
+                <label for="mar" class="form-label">Cuota Fija</label>
+                  <input class="form-control" type="text" name="cuota" value="<?= $isr->getcuota(); ?>" >
                 </div>
 
                 <div class="col-sm-2">
-                  <label for="abr" class="form-label">Abril</label>
-                  <input class="form-control" type="text" name="abr" value="<?= $inpc->getabr(); ?>" >                    
+                  <label for="abr" class="form-label">Porcentaje Excedente</label>
+                  <input class="form-control" type="text" name="por" value="<?= $isr->getpor(); ?>" >                    
                 </div>               
-                <div class="col-sm-2">
-                <label for="may" class="form-label">Mayo</label>
-                  <input class="form-control" type="text" name="may" value="<?= $inpc->getmay(); ?>" >
-                </div>
                 
-                <div class="col-sm-2">
-                <label for="jun" class="form-label">Junio</label>
-                  <input class="form-control" type="text" name="jun" value="<?= $inpc->getjun(); ?>" >
-                </div>
               </div>
 
-
-              <div class="row mb-3">
-                
-                <div class="col-sm-2">
-                  <label for="jul" class="form-label">Julio</label>
-                  <input class="form-control" type="text" name="jul" value="<?= $inpc->getjul(); ?>" > 
-                </div>               
-                <div class="col-sm-2">
-                <label for="ago" class="form-label">Agosto</label>
-                  <input class="form-control" type="text" name="ago" value="<?= $inpc->getago(); ?>" >
-                </div>
-                
-                <div class="col-sm-2">
-                <label for="sep" class="form-label">Septiembre</label>
-                  <input class="form-control" type="text" name="sep" value="<?= $inpc->getsep(); ?>" >
-                </div>
-
-                <div class="col-sm-2">
-                  <label for="oct" class="form-label">Octubre</label>
-                  <input class="form-control" type="text" name="oct" value="<?= $inpc->getoct(); ?>" >                    
-                </div>               
-                <div class="col-sm-2">
-                <label for="nom" class="form-label">Noviembre</label>
-                  <input class="form-control" type="text" name="nov" value="<?= $inpc->getnov(); ?>" >
-                </div>
-                
-                <div class="col-sm-2">
-                <label for="dic" class="form-label">Diciembre</label>
-                  <input class="form-control" type="text" name="dic" value="<?= $inpc->getdic(); ?>" >
-                </div>
-              </div>            
                 
               <div class="row mb-3">
                 <hr>

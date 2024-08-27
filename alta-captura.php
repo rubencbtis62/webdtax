@@ -111,17 +111,22 @@ if (@!$_SESSION['usuario'])
                           <div class="tab-content pt-2" id="myTabjustifiedContent">
 
                             <div class="tab-pane fade show active" id="partei" role="tabpanel" aria-labelledby="partei-tab">
-                              <?php include "includes/cap-isr.php"; ?>
-                              <p class="text-danger">
-                              Los datos aquí capturados son utilizados para la base de cálculo, se recomienda verificar las tablas de índices, tasas, y factores estén actualizados, así como los datos de captura son su responsabilidad.
-                              <p>
-
+                              <?php include "includes/cap-isrp1.php"; ?>
+                              
+                                <p class="text-danger">
+                                  Verificar datos sean correctos
+                                <p>
+                              
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
-                              Nesciunt totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.
+
+                            <?php include "includes/cap-isrp2.php"; ?>
+
                             </div>
                             <div class="tab-pane fade" id="parteiii" role="tabpanel" aria-labelledby="parteiii-tab">
-                              Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
+                            
+                            <?php include "includes/cap-isrp3.php"; ?>
+
                             </div>
 
 
@@ -163,7 +168,7 @@ if (@!$_SESSION['usuario'])
 
 
                   <div class="col-sm-2">
-                    <button type="submit" class="btn btn-primary" name="enviar">Guardar Datos</button>
+                    <button type="submit" class="btn btn-primary" name="enviar"data-bs-toggle="tooltip" data-bs-placement="right" title="Enviar">Guardar Datos</button>
                   </div>
                   <div class="spinner-border text-primary" role="status">
                          <span class="visually-hidden">Registrando...</span>
@@ -171,6 +176,9 @@ if (@!$_SESSION['usuario'])
                 </div>
 
               </form><!-- End General Form Elements -->
+              <div class="row">                
+                  <div class="col-sm-12 alert alert-info alert-dismissible fade show" role="alert">Los datos aquí capturados son utilizados para la base de cálculo, se recomienda verificar las tablas de índices, tasas, y factores estén actualizados, así como los datos de captura son su responsabilidad.</div>
+              </div>
 
             </div>
           </div>

@@ -4,19 +4,19 @@
                                     <label class="col-form-label"><strong>Mes</strong></label>
                                   </div>
                                   <div class="col-sm-2">
-                                   <label class="col-form-label">Ingresos</label>
+                                   <label class="col-form-label">Otras Cant.a favor del contribuyente</label>
                                   </div>
                                   <div class="col-sm-2">
-                                  <label class="col-form-label">Ded. Autorizadas</label>
+                                  <label class="col-form-label">IEPS Acreditable</label>
                                   </div>
                                   <div class="col-sm-2">
-                                   <label class="ccol-form-label">Ded. Imp. Local</label>
+                                   <label class="col-form-label">IDE Efect. Pagado</label>
                                   </div>
                                   <div class="col-sm-2">
-                                   <label class="col-form-label">Ded. de inversiones</label>
+                                   <label class="col-form-label">ISR pagado en Exceso</label>
                                   </div>
                                   <div class="col-sm-2">
-                                   <label class="col-form-label">Estimulo Fiscal por PTU</label>
+                                   <label for="inputDate" class="col-form-label">Fecha Presentacion</label>
                                   </div>
                                 </div>
                                 <div class="row mb-1">
@@ -40,7 +40,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -61,7 +61,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -82,7 +82,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -103,7 +103,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
                               
@@ -124,7 +124,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -145,7 +145,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
                               
@@ -153,7 +153,7 @@
 
                                 <div class="row mb-1 text-danger-emphasis">
                                     <div class="col-sm-1">
-                                      <label class="col-form-label">Julio/label>
+                                      <label class="col-form-label">Julio</label>
                                     </div>                                       
                                     <div class="col-sm-2">
                                         <input type="text" class="form-control text-end" id="k1" name="k1" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
@@ -168,7 +168,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -189,7 +189,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -210,7 +210,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -231,7 +231,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
                               
@@ -252,7 +252,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
 
@@ -273,7 +273,7 @@
                                         <input type="text" class="form-control text-end" id="k4" name="k4" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control text-end" id="k5" name="k5" placeholder="0.00" aria-describedby="Mes" VALUE="0.00">
+                                        <input type="date" class="form-control text-end" id="k5" name="k5">
                                     </div>
                                 </div>
                                                               
