@@ -1,3 +1,11 @@
+<?php
+  include('php/sql.php');
+  include('php/empresa.php');
+
+  $empresas = empresa::obtenertodos();
+
+?>
+
 <!DOCTYPE html>
 <?php session_start();
 if (@!$_SESSION['usuario'])
@@ -23,16 +31,44 @@ if (@!$_SESSION['usuario'])
   <?php include "includes/sidebar.php"; ?>
   <!-- ======= Main ======= -->
   <main id="main" class="main">
-
+   
     <div class="pagetitle">
-      <h1>Página de Registro</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-          <li class="breadcrumb-item">Pagina</li>
-          <li class="breadcrumb-item active">Registro</li>
-        </ol>
-      </nav>
+     <div class="row"> 
+      <div class="col-sm-5">
+        <h1>Página de Captura</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+            <li class="breadcrumb-item">Captura</li>
+            <li class="breadcrumb-item active">Personas Fisicas</li>
+          </ol>
+        </nav>
+       </div>
+                  <div class="col-sm-2">
+                    <label for="floatingSelect"><strong>Seleccionar Ejercicio</strong></label>
+                    <select class="form-select" id="floatingSelect" aria-label="Default select example">
+                      
+                      <option value="1">2024</option>
+                      <option value="2">2023</option>
+                      <option value="3">2022</option>
+                      <option value="3">2021</option>
+                      <option value="3">2020</option>
+                    </select>                   
+                    
+                  </div>
+                  <div class="col-sm-5">
+                  <label for="floatingSelect"><strong>Seleccionar Empresa</strong></label>
+                    <select class="form-select" aria-label="empresas" name="">
+                      <?php
+                        foreach ($empresas as $empresa) {                     
+                            echo "<option>".$empresa['em2']."</option>";
+                        }
+                      ?>                      
+                    </select>                   
+                  </div>
+
+      </div>
+
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -60,10 +96,12 @@ if (@!$_SESSION['usuario'])
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Captura Personas Fisicas Actividad Prof. y/o Empresarial</h5>
+                  <div class="col-sm-5">
+                  <h5 class="card-title">Captura Personas Fisicas Actividad Prof. y/o Empresarial</h5>
+                  </div>
 
-              <!-- General Form Elements -->
-              <form role="form" action="php/cempresa.php" method="POST" class="needs-validation" novalidate>
+              <!-- General Form Elements    action="php/ccaptura.php"     -->
+              <form role="form" action="php/postarreglos.php" method="POST" class="needs-validation" novalidate>
                 <input type="hidden" name="accion" value="alta">
                 <!-- <div class="row"> -->
 

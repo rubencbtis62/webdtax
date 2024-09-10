@@ -78,7 +78,7 @@ if (@!$_SESSION['usuario'])
                         <th scope="col">#</th>
                         <th scope="col">Empresa</th>
                         <th scope="col">Regimen</th>
-                        <th scope="col">Auxiiliar</th>
+                        <th scope="col">Usuario</th>
                         <th scope="col">Estatus</th>
                       </tr>
                     </thead>
@@ -101,7 +101,7 @@ if (@!$_SESSION['usuario'])
                         <th scope="row"><a href="#">#2049</a></th>
                         <td>Baja Mediterraneo</td>
                         <td><class="text-primary">Personas Morales Titulo II</class></td>
-                        <td>daniel Cosio</td>
+                        <td>Daniel Cosio</td>
                         <td><span class="badge bg-warning">Actualización</span></td>
                       </tr>
                       <tr>

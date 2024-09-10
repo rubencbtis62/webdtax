@@ -15,7 +15,7 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
          
-              <li class="nav-heading">Empresas</li>
+              <li class="nav-heading bi bi-ui-checks">Empresas</li>
 
                 <?php if ($_SESSION['id_cargo']!="2")
                 { ?>
@@ -35,12 +35,12 @@
                 <?php } ?>
                  
                 
-                <li class="nav-heading">Indicadores Fiscales</li>
+                <li class="nav-heading bi bi-reception-3">Indicadores Fiscales</li>
                 <?php if ($_SESSION['id_cargo']!="2")
                 { ?>
                 <li>
                 <a href="tables-isr.php">
-                      <i class="bi bi-circle"></i><span>Tabla ISR Pers.Fis.</span>
+                      <i class="bi bi-record-circle-fill"></i><span>Tabla ISR Pers.Fis.</span>
                     </a>
                 </li>
                 <?php } ?>
@@ -138,16 +138,12 @@
 
 
 
-
-
-
-
       <!-- Determinar impuestos -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav2" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav3" data-bs-toggle="collapse" href="#">
           <i class="bi bi-exclude"></i><span>Determinar Impuestos</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="tables-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav2">
+        <ul id="tables-nav3" class="nav-content collapse " data-bs-parent="#sidebar-nav3">
          
               <li class="nav-heading">Personas Fisicas</li>
 
