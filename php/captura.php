@@ -1,7 +1,7 @@
 <?php 
    class captura extends Sql {
     private $id;
-    private $id_em;
+    private $id_em;    
     private $estatus;
     private $em1;
     private $em2; 
@@ -176,12 +176,15 @@ public function setcapis( $capis)
 
       for ($row = 0; $row < 12; $row++) {               
            
+           // $nid_em  = intval($this->capis[$row][7]);
+
             $sql = "INSERT INTO captura(id_em,anio,id_tipo, id_mes,mes, k1, k2, k3, k4, k5, estatus) VALUES 
-            (1,2024,'i',($row+1), '".$this->capis[$row][5]."' ,'".$this->capis[$row][0]."','".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','1')";
+            ('".$this->capis[$row][7]."','".$this->capis[$row][6]."','".$this->capis[$row][8]."',($row+1), '".$this->capis[$row][0]."' ,'".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."','1')";
             
             $resultado = $this->mysqli->query($sql);
         
       }
+        // '".$this->capis[$row][7]."','".$this->capis[$row][6]."','i',($row+1),
 
         // $sql = "INSERT INTO captura(id_em,anio,id_tipo, id_mes,mes, k1, k2, k3, k4, k5, estatus) VALUES 
         // (1,2024,'i',1,'ene','".$this->capis[0][0]."','".$this->capis[0][1]."','".$this->capis[0][2]."','".$this->capis[0][3]."','".$this->capis[0][4]."','1')";

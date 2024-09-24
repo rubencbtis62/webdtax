@@ -2,7 +2,11 @@
   include('php/sql.php');
   include('php/empresa.php');
 
-  $empresas = empresa::obtenertodos();
+  $anio = $_POST['anio'];
+  $lid_em = $_POST['id_em'];
+  $id_em = strval($lid_em);
+  $empresa = empresa::obtenerporid_em($id_em);
+
 
 ?>
 
@@ -31,11 +35,13 @@ if (@!$_SESSION['usuario'])
   <?php include "includes/sidebar.php"; ?>
   <!-- ======= Main ======= -->
   <main id="main" class="main">
-   
+
+
+
     <div class="pagetitle">
      <div class="row"> 
-      <div class="col-sm-5">
-        <h1>Página de Captura</h1>
+      <div class="col-sm-3">
+        <h3>Página de Captura</h3>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
@@ -44,31 +50,20 @@ if (@!$_SESSION['usuario'])
           </ol>
         </nav>
        </div>
-                  <div class="col-sm-2">
-                    <label for="floatingSelect"><strong>Seleccionar Ejercicio</strong></label>
-                    <select class="form-select" id="floatingSelect" aria-label="Default select example">
-                      
-                      <option value="1">2024</option>
-                      <option value="2">2023</option>
-                      <option value="3">2022</option>
-                      <option value="3">2021</option>
-                      <option value="3">2020</option>
-                    </select>                   
-                    
-                  </div>
-                  <div class="col-sm-5">
-                  <label for="floatingSelect"><strong>Seleccionar Empresa</strong></label>
-                    <select class="form-select" aria-label="empresas" name="id_em">
-                      <?php
-                        foreach ($empresas as $empresa) {                     
-                            echo "<option value=".$empresa['id_em'].">".$empresa['em2']."</option>";
-                        }
-                      ?>                      
-                    </select>                   
-                  </div>
+       
+        <div class="col-sm-2">
+          <label><strong>Ejercicio</strong></label>
+          <input class="form-control" type="text" name="anio"  value="<?= $anio; ?>">
+        </div>
+        <div class="col-sm-7">
+          <label><strong>Empresa</strong></label>
+          <input class="form-control" type="text" name="em2"  value="<?= $empresa->getem2(); ?>">
+          <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>">
+        </div> 
 
       </div>
-        <?php echo var_dump($empresa['id_em']); ?>
+      <?php     var_dump($anio); ?>
+      <?php   var_dump($empresa->getid_em()); ?>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -100,9 +95,34 @@ if (@!$_SESSION['usuario'])
                   <h5 class="card-title">Captura Personas Fisicas Actividad Prof. y/o Empresarial</h5>
                   </div>
 
+
+                
               <!-- General Form Elements    action="php/ccaptura.php"     -->
               <form role="form" action="php/postarreglos.php" method="POST" class="needs-validation" novalidate>
                 <input type="hidden" name="accion" value="alta">
+
+                <!-- <  AQUI ME QUEDE REVISANDO   -->
+                 <!-- <  AQUI ME QUEDE REVISANDO   -->
+                  <!-- <  AQUI ME QUEDE REVISANDO   -->
+                   <!-- <  AQUI ME QUEDE REVISANDO   -->
+                    <!-- <  AQUI ME QUEDE REVISANDO   -->
+                     <!-- <  AQUI ME QUEDE REVISANDO   -->
+                      <!-- <  AQUI ME QUEDE REVISANDO   -->
+
+                      <?php
+                //echo '<h2>valor de anio'.$_POST['anio'].'</h2>'; 
+                //var_dump($anio);
+                //var_dump($_POST['anio']);
+                //var_dump($id_em);
+                //var_dump($_POST['id_em']);
+              ?>             
+                       
+                <input type="hidden" name="anio" value="<?= $anio; ?>">
+                <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>"> 
+                
+                
+                <!--<input type="hidden" name="accion" value="alta"> -->
+
                 <!-- <div class="row"> -->
 
                 <div class="card">
@@ -152,7 +172,7 @@ if (@!$_SESSION['usuario'])
                               <?php include "includes/cap-isrp1.php"; ?>
                               
                                 <p class="text-danger">
-                                  Verificar datos sean correctos
+                                  No olvides verificar que los datos sean correctos
                                 <p>
                               
                             </div>
@@ -187,8 +207,7 @@ if (@!$_SESSION['usuario'])
                 </div>
                   
 
-
-            
+           
                 <div class="row mb-3">
 
                 </div>

@@ -84,7 +84,7 @@
                 <?php if ($_SESSION['id_cargo']!="2")
                 { ?>
                 <li>
-                  <a href="alta-captura.php">
+                  <a href="alta-capturapf.php">
                     <i class="ri ri-add-circle-line"></i><span>Act. Empresarial y/o Prof.</span>
                   </a>
                 </li>

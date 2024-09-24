@@ -33,5 +33,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
        // }
        // break;
       }
-  //  header('location: ../alta-captura.php')     
-  ?>
+       header('location: ../alta-capturapf.php')  
+      ?>
+      <!-- <script language='javascript'>;
+      let captura = "<?php echo $em2;?>";
+      alert('captura:'+captura+' modificada correctamente.');
+      window.location = '../alta-capturaPF.php';
+      </script>; -->
+
+      
+ 

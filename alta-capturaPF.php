@@ -3,6 +3,7 @@
   include('php/empresa.php');
 
   $empresas = empresa::obtenertodos();
+  $anio =""; $id_em="";
 
 ?>
 
@@ -33,42 +34,45 @@ if (@!$_SESSION['usuario'])
   <main id="main" class="main">
    
     <div class="pagetitle">
-     <div class="row"> 
-      <div class="col-sm-5">
-        <h1>Página de Captura</h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-            <li class="breadcrumb-item">Captura</li>
-            <li class="breadcrumb-item active">Personas Fisicas</li>
-          </ol>
-        </nav>
-       </div>
-                  <div class="col-sm-2">
-                    <label for="floatingSelect"><strong>Seleccionar Ejercicio</strong></label>
-                    <select class="form-select" id="floatingSelect" aria-label="Default select example">
-                      
-                      <option value="1">2024</option>
-                      <option value="2">2023</option>
-                      <option value="3">2022</option>
-                      <option value="3">2021</option>
-                      <option value="3">2020</option>
-                    </select>                   
-                    
-                  </div>
-                  <div class="col-sm-5">
-                  <label for="floatingSelect"><strong>Seleccionar Empresa</strong></label>
-                    <select class="form-select" aria-label="empresas" name="id_em">
-                      <?php
-                        foreach ($empresas as $empresa) {                     
-                            echo "<option value=".$empresa['id_em'].">".$empresa['em2']."</option>";
-                        }
-                      ?>                      
-                    </select>                   
-                  </div>
+    <form id="filtrosForm" action="alta-capturanew.php" method = "POST">  
+     <div class="row">     
+          <div class="col-sm-4">
+            <h1>Página de Captura</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+                <li class="breadcrumb-item">Captura</li>
+                <li class="breadcrumb-item active">Personas Fisicas</li>
+              </ol>
+            </nav>
+          </div>
+          
+          <div class="col-sm-2">
+            <label for="anio"><strong>Seleccionar Ejercicio</strong></label>
+            <select class="form-select" id="anio" aria-label="Default select example" name="anio">                      
+              <option >2024</option>
+              <option >2023</option>
+              <option >2022</option>
+              <option >2021</option>
+              <option >2020</option>
+            </select>                                 
+          </div>
 
+          <div class="col-sm-5">
+          <label for="id_em"><strong>Seleccionar Empresa</strong></label>
+            <select class="form-select" id="id_em" aria-label="empresas" name="id_em">
+              <?php
+                foreach ($empresas as $empresa) {                     
+                    echo "<option value=".$empresa['id_em'].">".$empresa['em2']."</option>";
+                }
+              ?>                      
+            </select>                   
+          </div>
+          <div class="col-sm-1">
+            <button type="submit" class="btn btn-info">Buscar</button>
+          </div>        
       </div>
-        <?php echo var_dump($empresa['id_em']); ?>
+      </form>
     </div><!-- End Page Title -->
 
     <section class="section">
