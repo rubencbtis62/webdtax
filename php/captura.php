@@ -144,10 +144,26 @@ public function setcapis( $capis)
         }
         return $capturas;
       }
-    public static function obtenerporid_em($id_em){
+
+      public static function obtenerporempresa($anio, $id_em){
         $sqlhelper = new Sql();
         $sqlhelper->conectar();
-        $sql = "SELECT * FROM capturas WHERE id_em =".$id_em;
+        $sql = "SELECT mes, k1, k2, k3, k4, k5, id_em, anio, id_tipo, id_mes, estatus FROM capturas WHERE anio =".$anio." and id_em =".$id_em;
+        $resultado = $sqlhelper->getmysqli()->query($sql);
+        $captura_arreglo = $resultado->fetch_assoc();
+        $capturas = array();
+        while ($captura = $resultado->fetch_assoc()){
+        	array_push($capturas, $captura);
+        }
+        return $capturas;
+     }
+
+
+
+    public static function obtenerporid_em1($id_em){
+        $sqlhelper = new Sql();
+        $sqlhelper->conectar();
+        $sql = "SELECT  FROM capturas WHERE id_em =".$id_em;
         $resultado = $sqlhelper->getmysqli()->query($sql);
         $captura_arreglo = $resultado->fetch_assoc();
         $captura = new captura();
@@ -170,20 +186,22 @@ public function setcapis( $capis)
      }  
      
   /* Funcion Guardar */       
-     public function guardar(){
+     public function guardar()
+     {
 
       $this->conectar();       
-
-      for ($row = 0; $row < 12; $row++) {               
+         // For trabajando al 100 probando el implode
+      for ($row = 0; $row < 12; $row++)
+       {               
            
-           // $nid_em  = intval($this->capis[$row][7]);
-
-            $sql = "INSERT INTO captura(id_em,anio,id_tipo, id_mes,mes, k1, k2, k3, k4, k5, estatus) VALUES 
-            ('".$this->capis[$row][7]."','".$this->capis[$row][6]."','".$this->capis[$row][8]."',($row+1), '".$this->capis[$row][0]."' ,'".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."','1')";
+         $sql = "INSERT INTO captura(mes, k1, k2, k3, k4, k5, id_em, anio, id_tipo, id_mes, estatus) VALUES 
+          ('".$this->capis[$row][0]."' ,'".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."','".$this->capis[$row][6]."','".$this->capis[$row][7]."','".$this->capis[$row][8]."','".$this->capis[$row][9]."','".$this->capis[$row][10]."')";
             
-            $resultado = $this->mysqli->query($sql);
-        
-      }
+             $resultado = $this->mysqli->query($sql);        
+       }
+
+
+         // For inicial de prueba
         // '".$this->capis[$row][7]."','".$this->capis[$row][6]."','i',($row+1),
 
         // $sql = "INSERT INTO captura(id_em,anio,id_tipo, id_mes,mes, k1, k2, k3, k4, k5, estatus) VALUES 
@@ -192,10 +210,12 @@ public function setcapis( $capis)
         // $resultado = $this->mysqli->query($sql);
   
 
-
-      $sql = $this->mysqli->close();
-    //  $resultado = $this->mysqli->close();              
-      }
+       unset($capis);
+       // gc_collect_cycles();
+       $sql = $this->mysqli->close();
+      // $resultado = $this->mysqli->close();
+                    
+      } 
   
 
   /* Funcion Guardar */       
@@ -209,6 +229,7 @@ public function setcapis( $capis)
     $sql = $this->mysqli->close();
   //  $resultado = $this->mysqli->close();              
     }
+
 
   /* Funcion actializar empresa */       
     public function actualempresa(){

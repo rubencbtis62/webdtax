@@ -47,11 +47,6 @@ if (@!$_SESSION['usuario'])
           <div class="row">
 
 
-
-
-
-
-
             <!-- Recent Sales -->
             <div class="col-12">
               <div class="card recent-sales overflow-auto">
@@ -124,7 +119,7 @@ if (@!$_SESSION['usuario'])
                 </div>
 
               </div>
-            </div>End Recent Sales -->
+            </div> <!--End Recent Sales -->
 
             <!-- Top Selling -->
             <!-- <div class="col-12">

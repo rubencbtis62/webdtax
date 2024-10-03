@@ -2,11 +2,17 @@
   include('php/sql.php');
   include('php/empresa.php');
 
-  $anio = $_POST['anio'];
-  $id_em = $_POST['id_em'];
+  if ($_SERVER['REQUEST_METHOD']=='POST'){
+    $anio = $_POST['anio'];
+    $id_em = $_POST['id_em'];
+}else
+{
+    $anio = $_GET['anio'];
+    $id_em = $_GET['id_em'];
+}
 
   $empresa = empresa::obtenerporid_em($id_em);
-
+  
 ?>
 
 <!DOCTYPE html>
@@ -209,9 +215,9 @@ if (@!$_SESSION['usuario'])
                   <div class="col-sm-2">
                     <button type="submit" class="btn btn-primary" name="enviar"data-bs-toggle="tooltip" data-bs-placement="right" title="Enviar">Guardar Datos</button>
                   </div>
-                  <div class="spinner-border text-primary" role="status">
-                         <span class="visually-hidden">Registrando...</span>
-                  </div>
+                  <div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden">Registrando...</span>
+              </div>
                 </div>
 
               </form><!-- End General Form Elements -->

@@ -89,7 +89,7 @@
 		break;		
 
     }
-	//header('location: ../tables-capturas.php')
+	header('location: ../tables-capturas.php')
 ?>   
 	<script language='javascript'>;
 	let captura = "<?php echo $em2;?>";

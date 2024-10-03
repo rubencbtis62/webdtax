@@ -1,9 +1,19 @@
 <?php
   include('php/sql.php');
   include('php/empresa.php');
+  include('php/captura.php');
 
-  $empresas = empresa::obtenertodos();
-  $anio =""; $id_em="";
+  if ($_SERVER['REQUEST_METHOD']=='POST'){
+    $anio = $_POST['anio'];
+    $id_em = $_POST['id_em'];
+}else
+{
+    $anio = $_GET['anio'];
+    $id_em = $_GET['id_em'];
+}
+
+  $empresa = empresa::obtenerporid_em($id_em);
+  $captura = captura::obtenerporempresa($id_em);
 
 ?>
 
@@ -33,47 +43,32 @@ if (@!$_SESSION['usuario'])
   <!-- ======= Main ======= -->
   <main id="main" class="main">
    
-    <div class="pagetitle">
-    <!--<form id="filtrosForm" action="alta-capturanew.php" method = "POST">  -->
-    <form id="filtrosForm" action="php/validacaptura.php" method = "POST">    
-     <div class="row">     
-          <div class="col-sm-4">
-            <h1>Página de Captura</h1>
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-                <li class="breadcrumb-item">Captura</li>
-                <li class="breadcrumb-item active">Personas Fisicas</li>
-              </ol>
-            </nav>
-          </div>
-          
-          <div class="col-sm-2">
-            <label for="anio"><strong>Seleccionar Ejercicio</strong></label>
-            <select class="form-select" id="anio" aria-label="Default select example" name="anio">                      
-              <option >2024</option>
-              <option >2023</option>
-              <option >2022</option>
-              <option >2021</option>
-              <option >2020</option>
-            </select>                                 
-          </div>
+  <div class="pagetitle">
+     <div class="row"> 
+      <div class="col-sm-3">
+        <h3>Página de Captura</h3>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+            <li class="breadcrumb-item">Captura</li>
+            <li class="breadcrumb-item active">Personas Fisicas</li>
+          </ol>
+        </nav>
+       </div>
+       
+        <div class="col-sm-2">
+          <label><strong>Ejercicio</strong></label>
+          <input class="form-control" type="text" name="anio"  value="<?= $anio; ?>">
+        </div>
+        <div class="col-sm-7">
+          <label><strong>Empresa</strong></label>
+          <input class="form-control" type="text" name="em2"  value="<?= $empresa->getem2(); ?>">
+          <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>">
+        </div> 
 
-          <div class="col-sm-5">
-          <label for="id_em"><strong>Seleccionar Empresa</strong></label>
-            <select class="form-select" id="id_em" aria-label="empresas" name="id_em">
-              <?php
-                foreach ($empresas as $empresa) {                     
-                    echo "<option value=".$empresa['id_em'].">".$empresa['em2']."</option>";
-                }
-              ?>                      
-            </select>                   
-          </div>
-          <div class="col-sm-1">
-            <button type="submit" class="btn btn-info">Buscar</button>
-          </div>        
       </div>
-      </form>
+      <?php     var_dump($anio); ?>
+      <?php   var_dump($empresa->getid_em()); ?>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -108,6 +103,9 @@ if (@!$_SESSION['usuario'])
               <!-- General Form Elements    action="php/ccaptura.php"     -->
               <form role="form" action="php/postarreglos.php" method="POST" class="needs-validation" novalidate>
                 <input type="hidden" name="accion" value="alta">
+
+                <input type="hidden" name="anio" value="<?= $anio; ?>">
+                <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>"> 
                 <!-- <div class="row"> -->
 
                 <div class="card">
@@ -154,32 +152,38 @@ if (@!$_SESSION['usuario'])
                           <div class="tab-content pt-2" id="myTabjustifiedContent">
 
                             <div class="tab-pane fade show active" id="partei" role="tabpanel" aria-labelledby="partei-tab">
-                              <?php include "includes/cap-isrp1.php"; ?>
+                              <?php include "includes/cap-new-isrp1.php"; ?>
                               
-                                <p class="text-danger">
-                                  Verificar datos sean correctos
-                                <p>
-                              
+                                <!-- <p class="text-danger">
+                                  <marque> Verificar datos sean correctos </marque>
+                                <p> -->
+
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
 
-                            <?php include "includes/cap-isrp2.php"; ?>
+                            <?php include "includes/cap-new-isrp2.php"; ?>
 
                             </div>
                             <div class="tab-pane fade" id="parteiii" role="tabpanel" aria-labelledby="parteiii-tab">
                             
-                            <?php include "includes/cap-isrp3.php"; ?>
+                            <?php include "includes/cap-new-isrp3.php"; ?>
 
                             </div>
-
 
                           </div><!-- End Default Tabs -->
 
                         </div>
                       </div>
 
+                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          <i class="bi bi-exclamation-triangle me-1"></i>
+                          Verificar que los datos sean correctos!
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
 
                       </div>
+
+
                       <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">
                         Nesciunt totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.
                       </div>
@@ -213,9 +217,9 @@ if (@!$_SESSION['usuario'])
                   <div class="col-sm-2">
                     <button type="submit" class="btn btn-primary" name="enviar"data-bs-toggle="tooltip" data-bs-placement="right" title="Enviar">Guardar Datos</button>
                   </div>
-                  <div class="spinner-border text-primary" role="status">
-                         <span class="visually-hidden">Registrando...</span>
-                  </div>
+                  <div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden">Registrando...</span>
+              </div>
                 </div>
 
               </form><!-- End General Form Elements -->

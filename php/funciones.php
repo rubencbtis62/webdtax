@@ -31,6 +31,22 @@
    
 	}
 
+	function valida($anio,$id_em,$mysqli){
+
+      $sql = "SELECT * FROM captura WHERE anio = '".$anio."' AND  id_em= '".$id_em."'";
+  
+      $resultado = $mysqli->query($sql); 
+       if ($resultado->num_rows > 0)
+       {// Existe registro en captura                
+          return true;
+       }
+       return false;
+     
+     }
+
+
+
+
    function  desconectar()
    {
    session_start();
