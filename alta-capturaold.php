@@ -13,7 +13,7 @@
 }
 
   $empresa = empresa::obtenerporid_em($id_em);
-  $captura = captura::obtenerporempresa($id_em);
+  $captura = captura::obtenerporempresa($anio, $id_em);
 
 ?>
 
@@ -67,8 +67,46 @@ if (@!$_SESSION['usuario'])
         </div> 
 
       </div>
-      <?php     var_dump($anio); ?>
-      <?php   var_dump($empresa->getid_em()); ?>
+      <?php   var_dump($anio); ?>
+      <?php   var_dump($empresa->getid_em()); 
+      
+      //var_dump($captura);
+
+       $sw=true;
+
+      foreach ($captura as $fila) {
+        if ($sw)
+      {  
+        $capis = array(array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']));
+        $sw = false;
+      }
+      else 
+      {
+         $capis[]=array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
+        //array_push($capis, $fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
+      }
+         
+      
+      }
+
+
+      // for ($row = 0; $row < 12; $row++)
+      // {               
+           
+      //   $capis[0][] =   
+
+      //    $sql = "INSERT INTO captura(mes, k1, k2, k3, k4, k5, id_em, anio, id_tipo, id_mes, estatus) VALUES 
+      //     ('".$this->capis[$row][0]."' ,'".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."','".$this->capis[$row][6]."','".$this->capis[$row][7]."','".$this->capis[$row][8]."','".$this->capis[$row][9]."','".$this->capis[$row][10]."')";
+            
+      //        $resultado = $this->mysqli->query($sql);        
+      //  }
+
+
+
+      ?>
+   
+
+
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -102,7 +140,7 @@ if (@!$_SESSION['usuario'])
 
               <!-- General Form Elements    action="php/ccaptura.php"     -->
               <form role="form" action="php/postarreglos.php" method="POST" class="needs-validation" novalidate>
-                <input type="hidden" name="accion" value="alta">
+                <input type="hidden" name="accion" value="actualcaptura">
 
                 <input type="hidden" name="anio" value="<?= $anio; ?>">
                 <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>"> 
@@ -152,7 +190,7 @@ if (@!$_SESSION['usuario'])
                           <div class="tab-content pt-2" id="myTabjustifiedContent">
 
                             <div class="tab-pane fade show active" id="partei" role="tabpanel" aria-labelledby="partei-tab">
-                              <?php include "includes/cap-new-isrp1.php"; ?>
+                              <?php include "includes/cap-old-isrp1.php"; ?>
                               
                                 <!-- <p class="text-danger">
                                   <marque> Verificar datos sean correctos </marque>
@@ -161,12 +199,12 @@ if (@!$_SESSION['usuario'])
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
 
-                            <?php include "includes/cap-new-isrp2.php"; ?>
+                            <?php include "includes/cap-old-isrp2.php"; ?>
 
                             </div>
                             <div class="tab-pane fade" id="parteiii" role="tabpanel" aria-labelledby="parteiii-tab">
                             
-                            <?php include "includes/cap-new-isrp3.php"; ?>
+                            <?php include "includes/cap-old-isrp3.php"; ?>
 
                             </div>
 

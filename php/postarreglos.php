@@ -12,14 +12,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 
   switch ($accion) {
   	case 'alta':
-       $capis = $_POST['capis'];
-	  
+      {
+       $capis = $_POST['capis'];  
        $captura = new captura();
-
-       $captura->setcapis($capis);                    
-
+       $captura->setcapis($capis);   
+       //var_dump($capis);                 
        $captura->guardar();
-
        break;
 
         // for ($row = 0; $row < 12; $row++) {
@@ -33,7 +31,27 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
        // }
        // break;
       }
-      header('location: ../alta-capturapf.php')  
+
+
+      case 'actualcaptura':
+
+         $id_em = $_POST['id_em'];
+         $anio = $_POST['anio']; 
+         var_dump($capis[0][1]);                   
+         $capis = $_POST['capis'];  
+         //$captura = captura::obtenerporempresa($anio, $id_em);
+         var_dump($capis);
+         echo "<br>";
+         var_dump($capis[0][1]);
+         //$captura = new captura();
+         //$captura->setcapis($capis);       
+         
+         $captura->actualcaptura($anio, $id_em);
+         break;		
+   
+       }
+
+      //header('location: ../alta-capturapf.php')  
       ?>
       <!-- <script language='javascript'>;
       let captura = "<?php //echo $em2;?>";

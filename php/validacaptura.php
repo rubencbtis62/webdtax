@@ -21,7 +21,9 @@
    
   if (valida($anio,$id_em,$mysqli))
    {
-    header('location: ../index.php');    
+    //header('location: ../index.php');
+    $divert="anio=".$_POST['anio']."&id_em=".$_POST['id_em'];
+    header("location: ../alta-capturaold.php?$divert");    
    }else
    {
 

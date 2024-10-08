@@ -146,44 +146,45 @@ public function setcapis( $capis)
       }
 
       public static function obtenerporempresa($anio, $id_em){
+        
         $sqlhelper = new Sql();
-        $sqlhelper->conectar();
-        $sql = "SELECT mes, k1, k2, k3, k4, k5, id_em, anio, id_tipo, id_mes, estatus FROM capturas WHERE anio =".$anio." and id_em =".$id_em;
+        $sqlhelper->conectar();   //WHERE anio =".$anio." and id_em =".$id_em
+        $sql = "SELECT mes, k1, k2, k3, k4, k5, id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
         $resultado = $sqlhelper->getmysqli()->query($sql);
-        $captura_arreglo = $resultado->fetch_assoc();
+       // $captura_arreglo = $resultado->fetch_assoc();
         $capturas = array();
         while ($captura = $resultado->fetch_assoc()){
-        	array_push($capturas, $captura);
-        }
+        	array_push($capturas, $captura);          
+        }        
         return $capturas;
      }
 
 
 
-    public static function obtenerporid_em1($id_em){
-        $sqlhelper = new Sql();
-        $sqlhelper->conectar();
-        $sql = "SELECT  FROM capturas WHERE id_em =".$id_em;
-        $resultado = $sqlhelper->getmysqli()->query($sql);
-        $captura_arreglo = $resultado->fetch_assoc();
-        $captura = new captura();
+    // public static function obtenerporid($id_em){
+    //     $sqlhelper = new Sql();
+    //     $sqlhelper->conectar();
+    //     $sql = "SELECT * FROM capturas" WHERE id_em =" .$id_em;
+    //     $resultado = $sqlhelper->getmysqli()->query($sql);
+    //     $captura_arreglo = $resultado->fetch_assoc();
+    //     $captura = new captura();
         
-        $captura->setid_em($captura_arreglo['id_em']);
-        $captura->setestatus($captura_arreglo['estatus']);
-        $captura->setem1($captura_arreglo['em1']);
-        $captura->setem2($captura_arreglo['em2']);
-        $captura->setem3($captura_arreglo['em3']);
-        $captura->setem4($captura_arreglo['em4']);
-        $captura->setem5($captura_arreglo['em5']);
-        $captura->setem6($captura_arreglo['em6']);
-        $captura->setem7($captura_arreglo['em7']);
-        $captura->setem8($captura_arreglo['em8']);
-        $captura->setem9($captura_arreglo['em9']);
-        $captura->setem10($captura_arreglo['em10']);
-        $captura->setem11($captura_arreglo['em11']);      	
+    //     $captura->setid_em($captura_arreglo['id_em']);
+    //     $captura->setestatus($captura_arreglo['estatus']);
+    //     $captura->setem1($captura_arreglo['em1']);
+    //     $captura->setem2($captura_arreglo['em2']);
+    //     $captura->setem3($captura_arreglo['em3']);
+    //     $captura->setem4($captura_arreglo['em4']);
+    //     $captura->setem5($captura_arreglo['em5']);
+    //     $captura->setem6($captura_arreglo['em6']);
+    //     $captura->setem7($captura_arreglo['em7']);
+    //     $captura->setem8($captura_arreglo['em8']);
+    //     $captura->setem9($captura_arreglo['em9']);
+    //     $captura->setem10($captura_arreglo['em10']);
+    //     $captura->setem11($captura_arreglo['em11']);      	
         
-        return $captura;
-     }  
+    //     return $captura;
+    //  }  
      
   /* Funcion Guardar */       
      public function guardar()
@@ -199,16 +200,6 @@ public function setcapis( $capis)
             
              $resultado = $this->mysqli->query($sql);        
        }
-
-
-         // For inicial de prueba
-        // '".$this->capis[$row][7]."','".$this->capis[$row][6]."','i',($row+1),
-
-        // $sql = "INSERT INTO captura(id_em,anio,id_tipo, id_mes,mes, k1, k2, k3, k4, k5, estatus) VALUES 
-        // (1,2024,'i',1,'ene','".$this->capis[0][0]."','".$this->capis[0][1]."','".$this->capis[0][2]."','".$this->capis[0][3]."','".$this->capis[0][4]."','1')";
-        
-        // $resultado = $this->mysqli->query($sql);
-  
 
        unset($capis);
        // gc_collect_cycles();
@@ -229,6 +220,24 @@ public function setcapis( $capis)
     $sql = $this->mysqli->close();
   //  $resultado = $this->mysqli->close();              
     }
+
+  /* Funcion actializar empresa */       
+  public function actualcaptura($anio, $id_em){
+    $this->conectar();
+    //$sql = "UPDATE empresas SET estatus ='INACTIVO' WHERE id = ".$this->id_em;
+    for ($row = 0; $row < 12; $row++)
+    {  
+    $sql = "UPDATE captura SET 
+     k1 ='".$this->capis[$row][1]."', 
+     k2 ='".$this->capis[$row][2]."', 
+     k3 ='".$this->capis[$row][3]."', 
+     k4 ='".$this->capis[$row][4]."', 
+     k5 ='".$this->capis[$row][5]."' 
+     WHERE id_em = ".$this->id_em." and anio = ".$anio." and mes =".$this->capis[$row][0];
+     $resultado = $this->mysqli->query($sql);
+    }
+    $sql = $this->mysqli->close();
+} 
 
 
   /* Funcion actializar empresa */       
