@@ -222,7 +222,14 @@ public function setcapis( $capis)
     }
 
   /* Funcion actializar empresa */       
-  public function actualcaptura($anio, $id_em){
+  public function actualcap($anio, $id_em, $capis){
+    
+    $lanio = $anio;
+    $lid_em = $id_em;
+
+    var_dump($lanio);
+    var_dump($lid_em);
+
     $this->conectar();
     //$sql = "UPDATE empresas SET estatus ='INACTIVO' WHERE id = ".$this->id_em;
     for ($row = 0; $row < 12; $row++)
@@ -233,10 +240,17 @@ public function setcapis( $capis)
      k3 ='".$this->capis[$row][3]."', 
      k4 ='".$this->capis[$row][4]."', 
      k5 ='".$this->capis[$row][5]."' 
-     WHERE id_em = ".$this->id_em." and anio = ".$anio." and mes =".$this->capis[$row][0];
+     WHERE id_em = ".$lid_em." and anio = ".$lanio." and mes = '".$this->capis[$row][0]."'";
+     echo "<br>";
      $resultado = $this->mysqli->query($sql);
+
+     var_dump($sql);
     }
     $sql = $this->mysqli->close();
+
+
+     //WHERE id_em = ".$this->id_em." and anio = ".$anio." and mes =".$this->capis[$row][0];
+     //$resultado = $this->mysqli->query($sql);
 } 
 
 

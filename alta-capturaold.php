@@ -12,6 +12,10 @@
     $id_em = $_GET['id_em'];
 }
 
+$anio ="2024";
+$id_em = "1";
+
+
   $empresa = empresa::obtenerporid_em($id_em);
   $captura = captura::obtenerporempresa($anio, $id_em);
 
@@ -72,24 +76,21 @@ if (@!$_SESSION['usuario'])
       
       //var_dump($captura);
 
+     // var_dump($captura->getcapis());
+
        $sw=true;
 
       foreach ($captura as $fila) {
-        if ($sw)
-      {  
-        $capis = array(array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']));
-        $sw = false;
-      }
+      if ($sw)
+      { $lcapis = array(array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']));
+        $sw = false; }
       else 
-      {
-         $capis[]=array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
-        //array_push($capis, $fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
-      }
-         
+      {  $lcapis[]=array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']); }
       
+      //array_push($capis, $fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
       }
 
-
+      //var_dump($lcapis);
       // for ($row = 0; $row < 12; $row++)
       // {               
            
@@ -134,14 +135,12 @@ if (@!$_SESSION['usuario'])
         <div class="col">
           <div class="card">
             <div class="card-body">
-                  <div class="col-sm-5">
-                  <h5 class="card-title">Captura Personas Fisicas Actividad Prof. y/o Empresarial</h5>
-                  </div>
-
-              <!-- General Form Elements    action="php/ccaptura.php"     -->
-              <form role="form" action="php/postarreglos.php" method="POST" class="needs-validation" novalidate>
+              <div class="col-sm-5">
+                <h5 class="card-title">Captura Personas Fisicas Actividad Prof. y/o Empresarial</h5>
+                </div>
+                <!-- General Form Elements    action="php/ccaptura.php"     -->
+                <form role="form" action="php/postarreglos.php" method="POST" class="needs-validation" novalidate>
                 <input type="hidden" name="accion" value="actualcaptura">
-
                 <input type="hidden" name="anio" value="<?= $anio; ?>">
                 <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>"> 
                 <!-- <div class="row"> -->
@@ -199,12 +198,12 @@ if (@!$_SESSION['usuario'])
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
 
-                            <?php include "includes/cap-old-isrp2.php"; ?>
+                            <?php include "//includes/cap-old-isrp2.php"; ?>
 
                             </div>
                             <div class="tab-pane fade" id="parteiii" role="tabpanel" aria-labelledby="parteiii-tab">
                             
-                            <?php include "includes/cap-old-isrp3.php"; ?>
+                            <?php include "//includes/cap-old-isrp3.php"; ?>
 
                             </div>
 
@@ -234,7 +233,6 @@ if (@!$_SESSION['usuario'])
                 </div>
                   
 
-
             
                 <div class="row mb-3">
 
@@ -249,16 +247,13 @@ if (@!$_SESSION['usuario'])
                   </div>
                   <!-- <label class="col-sm-2 col-form-label"></label> -->
 
-
-
-
                   <div class="col-sm-2">
                     <button type="submit" class="btn btn-primary" name="enviar"data-bs-toggle="tooltip" data-bs-placement="right" title="Enviar">Guardar Datos</button>
                   </div>
-                  <div class="spinner-grow text-warning" role="status">
+                <div class="spinner-grow text-warning" role="status">
                 <span class="visually-hidden">Registrando...</span>
+               </div>
               </div>
-                </div>
 
               </form><!-- End General Form Elements -->
               <div class="row">                

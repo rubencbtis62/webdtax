@@ -1,7 +1,7 @@
                 
                     
-                    <input type="hidden" name="accion" value="actualcaptura">
-                    <!-- titulos -->
+                    <!-- Aqui empieza la captura Old P1 >
+                    titulos -->
 
                     <div class="row mb-1 text-center text-success">
                         <div class="col-sm-1">
@@ -39,6 +39,7 @@
                             echo '<input type="hidden" name="capis['.$row.'][8]" value="i">'; //id_tipo captura
                             echo '<input type="hidden" name="capis['.$row.'][10]" value="1">'; //estatus}
                             echo '<input type="hidden" name="capis['.$row.'][11]" value="NULL">'; //estatus}
+                            
                         }
                     ?> 
 
@@ -48,23 +49,24 @@
                             <label class="col-form-label">Enero</label>
                             <input type="hidden" name="capis[0][0]" value="ene">
                             <input type="hidden" name="capis[0][9]" value="1">
+                            <input type="hidden" name="capis[0][1]" value="<?= $lcapis[0][1]; ?>">
                             <!-- <input type="hidden" name="capis[0][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[0][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[0][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][1]"  aria-describedby="Mes" VALUE="<?= $lcapis[0][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[0][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][2]" aria-describedby="Mes"  VALUE="<?= $lcapis[0][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[0][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][3]" aria-describedby="Mes"  VALUE="<?= $lcapis[0][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[0][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][4]" aria-describedby="Mes"  VALUE="<?= $lcapis[0][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[0][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][5]" aria-describedby="Mes"  VALUE="<?= $lcapis[0][5]; ?>">
                         </div>
                     </div>
 
@@ -77,19 +79,19 @@
                             <!-- <input type="hidden" name="capis[1][7]" value="<?= $id_em; ?>">                                       -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[1][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][1]" placeholder="0.00"   VALUE="<?= $lcapis[1][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[1][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][2]" placeholder="0.00"   VALUE="<?= $lcapis[1][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[1][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][3]" placeholder="0.00"   VALUE="<?= $lcapis[1][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[1][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][4]" placeholder="0.00"   VALUE="<?= $lcapis[1][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end"  name="capis[1][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[1][5]; ?>">
+                            <input type="text" class="form-control text-end"  name="capis[1][5]" placeholder="0.00"   VALUE="<?= $lcapis[1][5]; ?>">
                         </div>
                     </div>
 
@@ -102,19 +104,19 @@
                             <!-- <input type="hidden" name="capis[2][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[2][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][1]" placeholder="0.00"   VALUE="<?= $lcapis[2][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[2][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][2]" placeholder="0.00"   VALUE="<?= $lcapis[2][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[2][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][3]" placeholder="0.00"   VALUE="<?= $lcapis[2][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[2][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][4]" placeholder="0.00"   VALUE="<?= $lcapis[2][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[2][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][5]" placeholder="0.00"   VALUE="<?= $lcapis[2][5]; ?>">
                         </div>
                     </div>
 
@@ -127,19 +129,19 @@
                             <!-- <input type="hidden" name="capis[3][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[3][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][1]" placeholder="0.00"   VALUE="<?= $lcapis[3][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[3][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][2]" placeholder="0.00"   VALUE="<?= $lcapis[3][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[3][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][3]" placeholder="0.00"   VALUE="<?= $lcapis[3][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[3][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][4]" placeholder="0.00"   VALUE="<?= $lcapis[3][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[3][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][5]" placeholder="0.00"   VALUE="<?= $lcapis[3][5]; ?>">
                         </div>
                     </div>
                     
@@ -152,19 +154,19 @@
                             <!-- <input type="hidden" name="capis[4][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[4][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][1]" placeholder="0.00"   VALUE="<?= $lcapis[4][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[4][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][2]" placeholder="0.00"   VALUE="<?= $lcapis[4][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[4][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][3]" placeholder="0.00"   VALUE="<?= $lcapis[4][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[4][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][4]" placeholder="0.00"   VALUE="<?= $lcapis[4][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[4][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][5]" placeholder="0.00"   VALUE="<?= $lcapis[4][5]; ?>">
                         </div>
                     </div>
 
@@ -177,19 +179,19 @@
                             <!-- <input type="hidden" name="capis[5][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[5][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][1]" placeholder="0.00"   VALUE="<?= $lcapis[5][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[5][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][2]" placeholder="0.00"   VALUE="<?= $lcapis[5][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[5][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][3]" placeholder="0.00"   VALUE="<?= $lcapis[5][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[5][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][4]" placeholder="0.00"   VALUE="<?= $lcapis[5][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[5][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][5]" placeholder="0.00"   VALUE="<?= $lcapis[5][5]; ?>">
                         </div>
                     </div>
                     
@@ -204,19 +206,19 @@
                             <!-- <input type="hidden" name="capis[6][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[6][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][1]" placeholder="0.00"   VALUE="<?= $lcapis[6][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[6][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][2]" placeholder="0.00"   VALUE="<?= $lcapis[6][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[6][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][3]" placeholder="0.00"   VALUE="<?= $lcapis[6][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[6][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][4]" placeholder="0.00"   VALUE="<?= $lcapis[6][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[6][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][5]" placeholder="0.00"   VALUE="<?= $lcapis[6][5]; ?>">
                         </div>
                     </div>
 
@@ -229,19 +231,19 @@
                             <!-- <input type="hidden" name="capis[7][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[7][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][1]" placeholder="0.00"   VALUE="<?= $lcapis[7][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[7][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][2]" placeholder="0.00"   VALUE="<?= $lcapis[7][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[7][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][3]" placeholder="0.00"   VALUE="<?= $lcapis[7][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[7][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][4]" placeholder="0.00"   VALUE="<?= $lcapis[7][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[7][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][5]" placeholder="0.00"   VALUE="<?= $lcapis[7][5]; ?>">
                         </div>
                     </div>
 
@@ -254,19 +256,19 @@
                             <!-- <input type="hidden" name="capis[8][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[8][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][1]" placeholder="0.00"   VALUE="<?= $lcapis[8][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[8][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][2]" placeholder="0.00"   VALUE="<?= $lcapis[8][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[8][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][3]" placeholder="0.00"   VALUE="<?= $lcapis[8][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[8][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][4]" placeholder="0.00"   VALUE="<?= $lcapis[8][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[8][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][5]" placeholder="0.00"   VALUE="<?= $lcapis[8][5]; ?>">
                         </div>
                     </div>
 
@@ -279,19 +281,19 @@
                             <!-- <input type="hidden" name="capis[9][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[9][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][1]" placeholder="0.00"   VALUE="<?= $lcapis[9][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[9][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][2]" placeholder="0.00"   VALUE="<?= $lcapis[9][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[9][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][3]" placeholder="0.00"   VALUE="<?= $lcapis[9][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[9][4]; ?>0">
+                            <input type="text" class="form-control text-end" name="capis[9][4]" placeholder="0.00"   VALUE="<?= $lcapis[9][4]; ?>0">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[9][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][5]" placeholder="0.00"   VALUE="<?= $lcapis[9][5]; ?>">
                         </div>
                     </div>
                     
@@ -304,19 +306,19 @@
                             <!-- <input type="hidden" name="capis[10][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">                                    
-                            <input type="text" class="form-control text-end" name="capis[10][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[10][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][1]" placeholder="0.00"   VALUE="<?= $lcapis[10][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[10][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][2]" placeholder="0.00"   VALUE="<?= $lcapis[10][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[10][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][3]" placeholder="0.00"   VALUE="<?= $lcapis[10][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[10][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][4]" placeholder="0.00"   VALUE="<?= $lcapis[10][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[10][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][5]" placeholder="0.00"   VALUE="<?= $lcapis[10][5]; ?>">
                         </div>
                     </div>
 
@@ -329,19 +331,19 @@
                             <!-- <input type="hidden" name="capis[11][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][1]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[11][1]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][1]" placeholder="0.00"   VALUE="<?= $lcapis[11][1]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][2]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[11][2]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][2]" placeholder="0.00"   VALUE="<?= $lcapis[11][2]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][3]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[11][3]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][3]" placeholder="0.00"   VALUE="<?= $lcapis[11][3]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][4]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[11][4]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][4]" placeholder="0.00"   VALUE="<?= $lcapis[11][4]; ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][5]" placeholder="0.00" aria-describedby="Mes" VALUE="<?= $capis[11][5]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][5]" placeholder="0.00"   VALUE="<?= $lcapis[11][5]; ?>">
                         </div>
                     </div>
                                               

@@ -106,8 +106,8 @@ if (@!$_SESSION['usuario'])
                   </div>
 
               <!-- General Form Elements    action="php/ccaptura.php"     -->
-              <form role="form" action="php/postarreglos.php" method="POST" class="needs-validation" novalidate>
-                <input type="hidden" name="accion" value="alta">
+              <form role="form" action="" method="POST" class="needs-validation" novalidate>
+                <input type="hidden" name="accion" value="">
                 <!-- <div class="row"> -->
 
                 <div class="card">
@@ -154,21 +154,21 @@ if (@!$_SESSION['usuario'])
                           <div class="tab-content pt-2" id="myTabjustifiedContent">
 
                             <div class="tab-pane fade show active" id="partei" role="tabpanel" aria-labelledby="partei-tab">
-                              <?php include "includes/cap-isrp1.php"; ?>
+                              <?php //include "includes/cap-isrp1.php"; ?>
                               
                                 <p class="text-danger">
-                                  Verificar datos sean correctos
+                                  Seleccionar Ejercicio y Empresa a trabajar
                                 <p>
                               
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
 
-                            <?php include "includes/cap-isrp2.php"; ?>
+                            <?php //include "includes/cap-isrp2.php"; ?>
 
                             </div>
                             <div class="tab-pane fade" id="parteiii" role="tabpanel" aria-labelledby="parteiii-tab">
                             
-                            <?php include "includes/cap-isrp3.php"; ?>
+                            <?php //include "includes/cap-isrp3.php"; ?>
 
                             </div>
 
@@ -197,7 +197,7 @@ if (@!$_SESSION['usuario'])
                 <div class="row mb-3">
 
                 </div>
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                   <div class="col-sm-4 col-form-check text-center">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck"><strong>Estoy de acuerdo </strong> que los datos son Correctos</label>
@@ -205,10 +205,6 @@ if (@!$_SESSION['usuario'])
                       Debes validar casilla y datos esten correctos
                     </div>                 
                   </div>
-                  <!-- <label class="col-sm-2 col-form-label"></label> -->
-
-
-
 
                   <div class="col-sm-2">
                     <button type="submit" class="btn btn-primary" name="enviar"data-bs-toggle="tooltip" data-bs-placement="right" title="Enviar">Guardar Datos</button>
@@ -216,7 +212,7 @@ if (@!$_SESSION['usuario'])
                   <div class="spinner-border text-primary" role="status">
                          <span class="visually-hidden">Registrando...</span>
                   </div>
-                </div>
+                </div> -->
 
               </form><!-- End General Form Elements -->
               <div class="row">                

@@ -36,25 +36,25 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
       case 'actualcaptura':
 
          $id_em = $_POST['id_em'];
-         $anio = $_POST['anio']; 
-         var_dump($capis[0][1]);                   
-         $capis = $_POST['capis'];  
-         //$captura = captura::obtenerporempresa($anio, $id_em);
-         var_dump($capis);
-         echo "<br>";
-         var_dump($capis[0][1]);
-         //$captura = new captura();
-         //$captura->setcapis($capis);       
+         $anio = $_POST['anio'];
+         $capis = $_POST['capis']; 
+
+         //$capturauno = $_POST['capturauno'];
          
-         $captura->actualcaptura($anio, $id_em);
+         //var_dump($capis);
+         
+         //$captura = captura::obtenerporempresa($anio, $id_em);
+         $captura = new captura();
+         $captura->setcapis($capis);
+         $captura->actualcap($anio, $id_em, $capis);
          break;		
    
        }
 
       //header('location: ../alta-capturapf.php')  
       ?>
-      <!-- <script language='javascript'>;
+      <script language='javascript'>;
       let captura = "<?php //echo $em2;?>";
       alert('captura:'+captura+' modificada correctamente.');
       window.location = '../alta-capturaPF.php';
-      </script>;  -->
+      </script>;  
