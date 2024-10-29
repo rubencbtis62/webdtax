@@ -149,7 +149,7 @@ public function setcapis( $capis)
         
         $sqlhelper = new Sql();
         $sqlhelper->conectar();   //WHERE anio =".$anio." and id_em =".$id_em
-        $sql = "SELECT mes, k1, k2, k3, k4, k5, id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
+        $sql = "SELECT mes, k1, k2, k3, k4, k5, k6, k7, k8, k9, k10,k11, k12, k13, k14, k15, id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
         $resultado = $sqlhelper->getmysqli()->query($sql);
        // $captura_arreglo = $resultado->fetch_assoc();
         $capturas = array();
@@ -195,8 +195,13 @@ public function setcapis( $capis)
       for ($row = 0; $row < 12; $row++)
        {               
            
-         $sql = "INSERT INTO captura(mes, k1, k2, k3, k4, k5, id_em, anio, id_tipo, id_mes, estatus) VALUES 
-          ('".$this->capis[$row][0]."' ,'".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."','".$this->capis[$row][6]."','".$this->capis[$row][7]."','".$this->capis[$row][8]."','".$this->capis[$row][9]."','".$this->capis[$row][10]."')";
+         $sql = "INSERT INTO captura(mes,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14, id_em, anio, id_tipo, id_mes, estatus) VALUES 
+          (
+          '".$this->capis[$row][0]."','".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."',
+          '".$this->capis[$row][5]."','".$this->capis[$row][6]."','".$this->capis[$row][7]."','".$this->capis[$row][8]."','".$this->capis[$row][9]."',
+          '".$this->capis[$row][10]."','".$this->capis[$row][11]."','".$this->capis[$row][12]."','".$this->capis[$row][13]."','".$this->capis[$row][14]."',
+          '".$this->capis[$row][16]."','".$this->capis[$row][17]."','".$this->capis[$row][18]."','".$this->capis[$row][19]."',
+          '".$this->capis[$row][20]."')";
             
              $resultado = $this->mysqli->query($sql);        
        }
@@ -239,7 +244,17 @@ public function setcapis( $capis)
      k2 ='".$this->capis[$row][2]."', 
      k3 ='".$this->capis[$row][3]."', 
      k4 ='".$this->capis[$row][4]."', 
-     k5 ='".$this->capis[$row][5]."' 
+     k5 ='".$this->capis[$row][5]."',
+     k6 ='".$this->capis[$row][6]."', 
+     k7 ='".$this->capis[$row][7]."', 
+     k8 ='".$this->capis[$row][8]."', 
+     k9 ='".$this->capis[$row][9]."', 
+     k10 ='".$this->capis[$row][10]."',
+     k11 ='".$this->capis[$row][11]."', 
+     k12 ='".$this->capis[$row][12]."', 
+     k13 ='".$this->capis[$row][13]."', 
+     k14 ='".$this->capis[$row][14]."', 
+     k15 ='".$this->capis[$row][15]."'
      WHERE id_em = ".$lid_em." and anio = ".$lanio." and mes = '".$this->capis[$row][0]."'";
      echo "<br>";
      $resultado = $this->mysqli->query($sql);

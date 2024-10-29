@@ -12,8 +12,8 @@
     $id_em = $_GET['id_em'];
 }
 
-$anio ="2024";
-$id_em = "1";
+// $anio ="2024";
+// $id_em = "1";
 
 
   $empresa = empresa::obtenerporid_em($id_em);
@@ -82,10 +82,16 @@ if (@!$_SESSION['usuario'])
 
       foreach ($captura as $fila) {
       if ($sw)
-      { $lcapis = array(array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']));
+      { $lcapis = array(array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5'],
+        $fila['k6'],$fila['k7'],$fila['k8'],$fila['k9'],$fila['k10'],
+        $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15']
+      ));
         $sw = false; }
       else 
-      {  $lcapis[]=array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']); }
+      {  $lcapis[]=array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5'],
+        $fila['k6'],$fila['k7'],$fila['k8'],$fila['k9'],$fila['k10'],
+        $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15']
+      ); }
       
       //array_push($capis, $fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
       }
@@ -198,12 +204,12 @@ if (@!$_SESSION['usuario'])
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
 
-                            <?php include "//includes/cap-old-isrp2.php"; ?>
+                            <?php include "includes/cap-old-isrp2.php"; ?>
 
                             </div>
                             <div class="tab-pane fade" id="parteiii" role="tabpanel" aria-labelledby="parteiii-tab">
                             
-                            <?php include "//includes/cap-old-isrp3.php"; ?>
+                            <?php include "includes/cap-old-isrp3.php"; ?>
 
                             </div>
 
