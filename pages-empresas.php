@@ -80,10 +80,10 @@ if (@!$_SESSION['usuario'])
 
               <form role="form" action="php/cempresa.php" method="POST">
               <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>">
-              <input type="hidden" name="accion" value="actualizarempresa">
+              <!--  DE AQUI BORRE LINEA HIDDEN -->
 
              
-                 <div class="row mb-3">                 
+                 <div class="row mb-2">                 
                    <label class="col-sm-1 col-form-label">Estatus</label>
                    <div class="col-sm-2">
                     <select class="form-select" aria-label="Default select example" name="estatus">
@@ -209,15 +209,34 @@ if (@!$_SESSION['usuario'])
                       Debes validar casilla y datos esten correctos
                     </div>                 
                   </div>                 
-                  <label class="col-sm-1 col-form-label">Actualizar</label>
-                  <div class="col-sm-3">
-                    <button type="submit" class="btn btn-primary" name="enviar">Enviar</button>
-                  </div>
-                </div>
+                  <label class="col-sm-1 col-form-label">Seleccionar</label>
 
-                
+                 
+                  <div class="col-sm-4">
+
+                   <!-- <button type="submit" class="btn btn-primary" name="enviar">Actualizar</button> -->
+
+                    <div class="btn-group" role="group">
+                      <button type="submit" class="btn btn-primary" name="enviar" id="enviar" onClick="enviar()">Enviar</button>
+                      <button type="submit" class="btn btn-warning" name="cancelar" id="cancelar" onClick="cancelar()">Cancelar</button>                      
+                    </div>
+
+                  </div>
+                </div>               
+
+                <input type="hidden" name="accion" value="actualizarempresa">
+
 
               </form><!-- End General Form Elements -->
+
+              <script>
+                 function enviar()
+                 {
+                   let $var1 = document.getElementById('enviar').name;
+                    
+                 }
+
+              </script>
 
             </div>
          </div>

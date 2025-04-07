@@ -9,8 +9,29 @@
 
 <!DOCTYPE html>
 <?php session_start();
+
+// Define el tiempo máximo de inactividad
+$tiempo_max_inactividad = 60; //900 15 minutos
+
 if (@!$_SESSION['usuario'])
-{  header("Location:pages-login.html");} ?>
+{  header("Location:pages-login.html");}
+
+
+// Actualiza el tiempo de acceso
+$_SESSION['lastaccess'] = time();
+
+// Regenerar el ID de la sesión periódicamente
+$tiempo_regeneracion = 60; //300 5 minutos
+
+if (!isset($_SESSION['ultimo_regenerado']) || time() - $_SESSION['ultimo_regenerado'] > $tiempo_regeneracion) 
+{
+    session_regenerate_id(true);
+    $_SESSION['ultimo_regenerado'] = time();
+}
+
+
+
+?>
 
 <html lang="es">
 <head>
@@ -50,7 +71,8 @@ if (@!$_SESSION['usuario'])
           
           <div class="col-sm-2">
             <label for="anio"><strong>Seleccionar Ejercicio</strong></label>
-            <select class="form-select" id="anio" aria-label="Default select example" name="anio">                      
+            <select class="form-select" id="anio" aria-label="Default select example" name="anio">
+              <option >2025</option>
               <option >2024</option>
               <option >2023</option>
               <option >2022</option>
@@ -69,7 +91,7 @@ if (@!$_SESSION['usuario'])
               ?>                      
             </select>                   
           </div>
-          <div class="col-sm-1">
+          <div class="col-sm-1 mt-4">
             <button type="submit" class="btn btn-info">Buscar</button>
           </div>        
       </div>
@@ -103,6 +125,7 @@ if (@!$_SESSION['usuario'])
             <div class="card-body">
                   <div class="col-sm-5">
                   <h5 class="card-title">Captura Personas Fisicas Actividad Prof. y/o Empresarial</h5>
+                  <?php  var_dump($_SESSION['lastaccess']);  ?>
                   </div>
 
               <!-- General Form Elements    action="php/ccaptura.php"     -->
@@ -130,7 +153,7 @@ if (@!$_SESSION['usuario'])
                           <button class="nav-link w-100" id="pills-nom-tab" data-bs-toggle="pill" data-bs-target="#pills-nom" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Nomina</button>
                         </li>
                         <li class="nav-item flex-fill" role="presentation">
-                          <button class="nav-link w-100" id="pills-hos-tab" data-bs-toggle="pill" data-bs-target="#pills-hos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp. S/ Hospedaje</button>
+                          <button class="nav-link w-100" id="pills-hos-tab" data-bs-toggle="pill" data-bs-target="#pills-hos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Hospedaje</button>
                         </li>                      
                     </ul>
                     <div class="tab-content pt-2" id="myTabContent">
@@ -155,10 +178,23 @@ if (@!$_SESSION['usuario'])
 
                             <div class="tab-pane fade show active" id="partei" role="tabpanel" aria-labelledby="partei-tab">
                               <?php //include "includes/cap-isrp1.php"; ?>
-                              
-                                <p class="text-danger">
-                                  Seleccionar Ejercicio y Empresa a trabajar
-                                <p>
+
+                              <div class="row">
+
+                                <div class="col-1">
+                                  <div class="spinner-grow text-warning" role="status"></div>
+                                </div>
+                                <div class="col">
+                                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                      <div class="text-danger">
+                                        Seleccionar Ejercicio, Empresa a trabajar y dar clic en Buscar
+                                      </div>
+                                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+
+                                </div>                                
+                              </div>
+
                               
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
@@ -181,10 +217,14 @@ if (@!$_SESSION['usuario'])
 
                       </div>
                       <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">
-                        Nesciunt totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.
+                      <p class="text-danger">
+                                  Seleccionar Ejercicio, Empresa a trabajar y dar clic en Buscar
+                                <p>
                       </div>
                       <div class="tab-pane fade" id="pills-retisr" role="tabpanel" aria-labelledby="retisr-tab">
-                        Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
+                      <p class="text-danger">
+                                  Seleccionar Ejercicio, Empresa a trabajar y dar clic en Buscar
+                                <p>
                       </div>
                     </div><!-- End Pills Tabs -->
 

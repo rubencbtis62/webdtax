@@ -17,13 +17,15 @@
 
     $resultado = $mysqli->query($sql); 
      if ($resultado->num_rows > 0)
-     {//acceso     
+     {//acceso  
+       session_start();   
         $f = $resultado->fetch_assoc();
         
         $_SESSION['usuario']= $f['usuario'];
         $_SESSION['nombre']= $f['nombre'];
         $_SESSION['imagen']= $f['imagen'];
         $_SESSION['id_cargo']= $f['id_cargo'];
+        $_SESSION['lastaccess']= time();
 
         return true;
      }

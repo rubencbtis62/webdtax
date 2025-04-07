@@ -41,6 +41,25 @@ if (@!$_SESSION['usuario'])
 
     <section class="section dashboard">
       <div class="row">
+      <?php
+        if(isset($_SESSION['msj'])){
+          $mensaje = $_SESSION['msj']; ?>
+          <script>
+            Swal.fire({
+              icon: "sucess",
+              title: '<?php echo $mensaje; ?>',
+              text: "Ok, para Continuar",
+              footer: '<b>Web Dtax Ver 1.0</b>'
+            });
+          </script>
+
+      <?php
+         unset($_SESSION['msj']);
+        }
+      ?>
+
+
+
 
         <!-- Left side columns -->
         <div class="col-lg-12">

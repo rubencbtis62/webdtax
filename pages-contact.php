@@ -50,7 +50,7 @@ if (@!$_SESSION['usuario'])
             <div class="col-lg-6">
               <div class="info-box card">
                 <i class="bi bi-telephone"></i>
-                <h3>Llamar</h3>
+                <h3>Llamar!!</h3>
                 <p>+52 612 168 0993<br>+1 61212 26910</p>
               </div>
             </div>

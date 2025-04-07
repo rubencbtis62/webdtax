@@ -21,11 +21,28 @@
   if (valida($anio,$id_em,$mysqli))
    {
     //header('location: ../index.php');
+
+?>
+    <script language='javascript'>
+    Swal.fire({
+      icon: "sucess",
+      title: 'Mensaje de Sistema',
+      text: "Captura, Modificada correctamente",
+      footer: '<b>Web Dtax Ver 1.0</b>',
+      allowOutsideClick: false,
+      allowEscapekey: false,
+      allowEnterkey: false,
+      stopKeydownPropagation: false
+    });
+  </script>;
+
+
+<?php
+
     $divert="anio=".$_POST['anio']."&id_em=".$_POST['id_em'];
     header("location: ../alta-capturaold.php?$divert");    
    }else
    {
-
    // $divert=$row['id']."&param1=".($param1)."&param2=".($param2);
 
     $divert="anio=".$_POST['anio']."&id_em=".$_POST['id_em'];

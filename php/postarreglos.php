@@ -16,8 +16,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
        $capis = $_POST['capis'];  
        $captura = new captura();
        $captura->setcapis($capis);   
-       //var_dump($capis);                 
-       $captura->guardar();
+       
+       var_dump($capis);                 
+       //$captura->guardar();
+       $captura->guardarnpf();
        break;
 
         // for ($row = 0; $row < 12; $row++) {
@@ -33,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
       }
 
 
-      case 'actualcaptura':
+      case 'actualcaptura':{
 
          $id_em = $_POST['id_em'];
          $anio = $_POST['anio'];
@@ -47,14 +49,31 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
          $captura = new captura();
          $captura->setcapis($capis);
          $captura->actualcap($anio, $id_em, $capis);
-         break;		
-   
+         break;
        }
-
-      //header('location: ../alta-capturapf.php')  
+  }
+      header('location: ../alta-capturapf.php');  
+  
       ?>
-      <script language='javascript'>;
+
+     <?php    echo '<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>';  ?>
+           <script language='javascript'>
+            Swal.fire({
+              icon: "sucess",
+              title: 'Mensaje de Sistema',
+              text: "Captura, Modificada correctamente",
+              footer: '<b>Web Dtax Ver 1.0</b>',
+              allowOutsideClick: false,
+              allowEscapekey: false,
+              allowEnterkey: false,
+              stopKeydownPropagation: false
+            });
+            window.location = '../alta-capturaPF.php';
+          </script>; 
+
+      <!--
+     <script language='javascript'>;
       let captura = "<?php //echo $em2;?>";
       alert('captura:'+captura+' modificada correctamente.');
       window.location = '../alta-capturaPF.php';
-      </script>;  
+      </script>;   -->

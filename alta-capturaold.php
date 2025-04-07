@@ -62,35 +62,41 @@ if (@!$_SESSION['usuario'])
        
         <div class="col-sm-2">
           <label><strong>Ejercicio</strong></label>
-          <input class="form-control" type="text" name="anio"  value="<?= $anio; ?>">
+          <input class="form-control" type="text" name="anio"  value="<?= $anio; ?>" disabled>
         </div>
         <div class="col-sm-7">
           <label><strong>Empresa</strong></label>
-          <input class="form-control" type="text" name="em2"  value="<?= $empresa->getem2(); ?>">
+          <input class="form-control" type="text" name="em2"  value="<?= $empresa->getem2(); ?>" disabled>
           <input type="hidden" name="id_em" value="<?= $empresa->getid_em(); ?>">
         </div> 
 
       </div>
-      <?php   var_dump($anio); ?>
-      <?php   var_dump($empresa->getid_em()); 
+      <?php //  var_dump($anio); ?>
+      <?php  // var_dump($empresa->getid_em()); 
       
       //var_dump($captura);
 
      // var_dump($captura->getcapis());
 
-       $sw=true;
+      $sw=true;
+      unset($lcapis);
 
       foreach ($captura as $fila) {
       if ($sw)
       { $lcapis = array(array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5'],
         $fila['k6'],$fila['k7'],$fila['k8'],$fila['k9'],$fila['k10'],
-        $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15']
+        $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15'],
+        $fila['k16'],$fila['k17'],$fila['k18'],$fila['k19'],$fila['k20'],
+        $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],$fila['k26']
+
       ));
         $sw = false; }
       else 
       {  $lcapis[]=array($fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5'],
         $fila['k6'],$fila['k7'],$fila['k8'],$fila['k9'],$fila['k10'],
-        $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15']
+        $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15'],
+        $fila['k16'],$fila['k17'],$fila['k18'],$fila['k19'],$fila['k20'],
+        $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],$fila['k26']
       ); }
       
       //array_push($capis, $fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
@@ -171,48 +177,81 @@ if (@!$_SESSION['usuario'])
                           <button class="nav-link w-100" id="pills-nom-tab" data-bs-toggle="pill" data-bs-target="#pills-nom" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Nomina</button>
                         </li>
                         <li class="nav-item flex-fill" role="presentation">
-                          <button class="nav-link w-100" id="pills-hos-tab" data-bs-toggle="pill" data-bs-target="#pills-hos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp. S/ Hospedaje</button>
+                          <button class="nav-link w-100" id="pills-hos-tab" data-bs-toggle="pill" data-bs-target="#pills-hos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Hospedaje</button>
                         </li>                      
                     </ul>
                     <div class="tab-content pt-2" id="myTabContent">
                       <div class="tab-pane fade show active" id="pills-isr" role="tabpanel" aria-labelledby="isr-tab">
 
-                      <!-- Tab interno -->
+                      <!-- Tab interno de ISR-->
                       <div class="card">
                         <div class="card-body">                          
                           <!-- Default Tabs -->
                           <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
                             <li class="nav-item flex-fill" role="presentation">
-                              <button class="nav-link w-100 active" id="partei-tab" data-bs-toggle="tab" data-bs-target="#partei" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                              <button class="nav-link w-100 active text-bg-success" id="partei-tab" data-bs-toggle="tab" data-bs-target="#partei" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
                             </li>
                             <li class="nav-item flex-fill" role="presentation">
-                              <button class="nav-link w-100" id="parteii-tab" data-bs-toggle="tab" data-bs-target="#parteii" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                              <button class="nav-link w-100 text-bg-success" id="parteii-tab" data-bs-toggle="tab" data-bs-target="#parteii" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
                             </li>
                             <li class="nav-item flex-fill" role="presentation">
-                              <button class="nav-link w-100" id="parteiii-tab" data-bs-toggle="tab" data-bs-target="#parteiii" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
+                              <button class="nav-link w-100 text-bg-success" id="parteiii-tab" data-bs-toggle="tab" data-bs-target="#parteiii" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
                             </li>
                           </ul>
-                          <div class="tab-content pt-2" id="myTabjustifiedContent">
+                          <div class="tab-content pt-0" id="myTabjustifiedContent">
 
                             <div class="tab-pane fade show active" id="partei" role="tabpanel" aria-labelledby="partei-tab">
-                              <?php include "includes/cap-old-isrp1.php"; ?>
-                              
-                                <!-- <p class="text-danger">
-                                  <marque> Verificar datos sean correctos </marque>
-                                <p> -->
-
+                              <?php include "includes/cap-old-isrp1.php"; // Captura de ISR ?>
                             </div>
                             <div class="tab-pane fade" id="parteii" role="tabpanel" aria-labelledby="parteii-tab">
 
-                            <?php include "includes/cap-old-isrp2.php"; ?>
+                            <?php include "includes/cap-old-isrp2.php"; // Captura de ISR ?>
 
                             </div>
                             <div class="tab-pane fade" id="parteiii" role="tabpanel" aria-labelledby="parteiii-tab">
                             
-                            <?php include "includes/cap-old-isrp3.php"; ?>
+                            <?php include "includes/cap-old-isrp3.php"; // Captura de ISR ?>
 
                             </div>
 
+                          </div><!-- End Default Tabs -->
+
+                        </div>
+                      </div>
+
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <i class="bi bi-exclamation-triangle me-1"></i>
+                            Verificar que los datos sean correctos!
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">
+
+                      <!-- Tab interno de IVA-->
+                      <div class="card">
+                        <div class="card-body">                          
+                          <!-- Default Tabs -->
+                          <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+                            <li class="nav-item flex-fill" role="presentation">
+                              <button class="nav-link w-100 active text-bg-warning" id="partev-tab" data-bs-toggle="tab" data-bs-target="#partev" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                            </li>
+                            <li class="nav-item flex-fill" role="presentation">
+                              <button class="nav-link w-100 text-bg-warning" id="partevv-tab" data-bs-toggle="tab" data-bs-target="#partevv" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                            </li>
+                            <li class="nav-item flex-fill" role="presentation">
+                              <button class="nav-link w-100 text-bg-warning" id="partevvv-tab" data-bs-toggle="tab" data-bs-target="#partevvv" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
+                            </li>
+                          </ul>
+                          <div class="tab-content pt-0" id="myTabjustifiedContent">
+                            <div class="tab-pane fade show active" id="partev" role="tabpanel" aria-labelledby="partev-tab">
+                              <!-- <?php include "includes/cap-old-ivap1.php"; ?>                                                               -->
+                            </div>
+                            <div class="tab-pane fade" id="partevv" role="tabpanel" aria-labelledby="partevv-tab">
+                              <?php include "includes/cap-old-ivap2.php"; ?>
+                            </div>
+                            <div class="tab-pane fade" id="partevvv" role="tabpanel" aria-labelledby="partevvv-tab">                           
+                              <?php include "includes/cap-old-ivap3.php"; ?>
+                            </div>
                           </div><!-- End Default Tabs -->
 
                         </div>
@@ -224,12 +263,12 @@ if (@!$_SESSION['usuario'])
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                       </div>
 
+
+
+
                       </div>
 
 
-                      <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">
-                        Nesciunt totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.
-                      </div>
                       <div class="tab-pane fade" id="pills-retisr" role="tabpanel" aria-labelledby="retisr-tab">
                         Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
                       </div>

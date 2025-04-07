@@ -4,7 +4,7 @@
   $usuario = $_POST['usuario'];
   $pwd = $_POST['pwd'];
 
-  session_start();
+  //
 
   //$_SESSION['usuario']=$usuario;
   
@@ -13,11 +13,14 @@
    
   if (login($usuario,$pwd,$mysqli))
    {
-     header('location: ../index.php');   	
+     session_start();
+     $_SESSION['msj'] = 'Bienvenido '.$usuario; 
+     header('location: ../index.php');
    }else
-   {
-      
-   	 header('location: ../pages-login.html'); 
+   { 
+     session_start();
+     $_SESSION['msj'] = 'ERROR en autentifición'; 
+     header('location: ../pages-login.html');
    }
 
 

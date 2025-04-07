@@ -149,7 +149,7 @@ public function setcapis( $capis)
         
         $sqlhelper = new Sql();
         $sqlhelper->conectar();   //WHERE anio =".$anio." and id_em =".$id_em
-        $sql = "SELECT mes, k1, k2, k3, k4, k5, k6, k7, k8, k9, k10,k11, k12, k13, k14, k15, id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
+        $sql = "SELECT mes, k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
         $resultado = $sqlhelper->getmysqli()->query($sql);
        // $captura_arreglo = $resultado->fetch_assoc();
         $capturas = array();
@@ -186,12 +186,85 @@ public function setcapis( $capis)
     //     return $captura;
     //  }  
      
+  
+  
   /* Funcion Guardar */       
+  public function guardararray()
+  {
+
+   $this->conectar();       
+   // For trabajando al 100 probando el implode
+
+   $json_arreglo = json_encode($this->capis);
+
+   ob_flush();
+   ob_start();
+
+   var_dump($this->capis);
+
+   file_put_contents("dump.txt", ob_get_flush());
+
+   for ($row = 0; $row < 12; $row++)
+    {               
+        
+      $sql = "INSERT INTO captura(mes,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26, id_em, anio, id_tipo, id_mes, estatus) VALUES 
+       ('$json_arreglo')";
+    
+      $resultado = $this->mysqli->query($sql);
+
+    }
+   
+
+    unset($this->$capis);
+    $sql = $this->mysqli->close();
+   // $resultado = $this->mysqli->close();
+                 
+   } 
+
+
+  /* Funcion Guardar */       
+  public function guardarnpf()
+  {
+
+    $this->conectar();       
+      // For trabajando al 100 probando el implode
+
+    //if ($this->capis[0][18] == "i") // Genera registros para ISR
+    //{   
+    for ($row = 0; $row < 12; $row++)
+    {               
+            
+      $sql = "INSERT INTO captura(mes,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,id_em, anio, id_tipo, id_mes, estatus) VALUES 
+        (
+      '".$this->capis[$row][0]."','".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."',
+      '".$this->capis[$row][6]."','".$this->capis[$row][7]."','".$this->capis[$row][8]."','".$this->capis[$row][9]."','".$this->capis[$row][10]."','".$this->capis[$row][11]."',
+      '".$this->capis[$row][12]."','".$this->capis[$row][13]."','".$this->capis[$row][14]."','".$this->capis[$row][16]."','".$this->capis[$row][17]."','".$this->capis[$row][18]."',
+      '".$this->capis[$row][19]."','".$this->capis[$row][20]."','".$this->capis[$row][21]."','".$this->capis[$row][22]."','".$this->capis[$row][23]."','".$this->capis[$row][24]."',
+      '".$this->capis[$row][25]."','".$this->capis[$row][27]."','".$this->capis[$row][28]."','".$this->capis[$row][29]."','".$this->capis[$row][30]."',
+      '".$this->capis[$row][31]."')";
+          
+          $resultado = $this->mysqli->query($sql);        
+    }
+    //}
+
+
+  unset($capis);
+  // gc_collect_cycles();
+  $sql = $this->mysqli->close();
+  // $resultado = $this->mysqli->close();
+                
+  }
+  
+  
+    /* Funcion Guardar */       
      public function guardar()
      {
 
       $this->conectar();       
          // For trabajando al 100 probando el implode
+
+      if ($this->capis[0][18] == "i") // Genera registros para ISR
+      {   
       for ($row = 0; $row < 12; $row++)
        {               
            
@@ -205,6 +278,8 @@ public function setcapis( $capis)
             
              $resultado = $this->mysqli->query($sql);        
        }
+      }
+
 
        unset($capis);
        // gc_collect_cycles();
@@ -232,8 +307,8 @@ public function setcapis( $capis)
     $lanio = $anio;
     $lid_em = $id_em;
 
-    var_dump($lanio);
-    var_dump($lid_em);
+   // var_dump($lanio);
+   // var_dump($lid_em);
 
     $this->conectar();
     //$sql = "UPDATE empresas SET estatus ='INACTIVO' WHERE id = ".$this->id_em;
@@ -254,12 +329,24 @@ public function setcapis( $capis)
      k12 ='".$this->capis[$row][12]."', 
      k13 ='".$this->capis[$row][13]."', 
      k14 ='".$this->capis[$row][14]."', 
-     k15 ='".$this->capis[$row][15]."'
+     k15 ='".$this->capis[$row][15]."',
+     k16 ='".$this->capis[$row][18]."',
+     k17 ='".$this->capis[$row][17]."',
+     k18 ='".$this->capis[$row][18]."',
+     k19 ='".$this->capis[$row][19]."',
+     k20 ='".$this->capis[$row][20]."',
+     k21 ='".$this->capis[$row][21]."',
+     k22 ='".$this->capis[$row][22]."',
+     k23 ='".$this->capis[$row][23]."',
+     k24 ='".$this->capis[$row][24]."',
+     k25 ='".$this->capis[$row][25]."',
+     k26 ='".$this->capis[$row][26]."'
+
      WHERE id_em = ".$lid_em." and anio = ".$lanio." and mes = '".$this->capis[$row][0]."'";
      echo "<br>";
      $resultado = $this->mysqli->query($sql);
 
-     var_dump($sql);
+    // var_dump($sql);
     }
     $sql = $this->mysqli->close();
 
