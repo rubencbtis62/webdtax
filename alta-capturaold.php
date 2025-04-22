@@ -87,7 +87,9 @@ if (@!$_SESSION['usuario'])
         $fila['k6'],$fila['k7'],$fila['k8'],$fila['k9'],$fila['k10'],
         $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15'],
         $fila['k16'],$fila['k17'],$fila['k18'],$fila['k19'],$fila['k20'],
-        $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],$fila['k26']
+        $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],
+        $fila['k26'],$fila['k27'],$fila['k28'],$fila['k29'],$fila['k30'],
+        $fila['k31'],$fila['k32'],$fila['k33'],$fila['k34'],$fila['k35'],$fila['k36']
 
       ));
         $sw = false; }
@@ -96,7 +98,9 @@ if (@!$_SESSION['usuario'])
         $fila['k6'],$fila['k7'],$fila['k8'],$fila['k9'],$fila['k10'],
         $fila['k11'],$fila['k12'],$fila['k13'],$fila['k14'],$fila['k15'],
         $fila['k16'],$fila['k17'],$fila['k18'],$fila['k19'],$fila['k20'],
-        $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],$fila['k26']
+        $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],
+        $fila['k26'],$fila['k27'],$fila['k28'],$fila['k29'],$fila['k30'],
+        $fila['k31'],$fila['k32'],$fila['k33'],$fila['k34'],$fila['k35'],$fila['k36']
       ); }
       
       //array_push($capis, $fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
@@ -162,17 +166,17 @@ if (@!$_SESSION['usuario'])
                     <h5 class="card-title">Selecciona Impuesto</h5>
                     <ul class="nav nav-pills mb-2 d-flex" id="pills-tab" role="tablist">
                       <li class="nav-item flex-fill" role="presentation">
-                        <button class="nav-link active" id="pills-isr-tab" data-bs-toggle="pill" data-bs-target="#pills-isr" type="button" role="tab" aria-controls="pills-home" aria-selected="true">ISR</button>
+                        <button class="nav-link active" id="pills-isr-tab" data-bs-toggle="pill" data-bs-target="#pills-isr" type="button" role="tab" aria-controls="pills-isr" aria-selected="true">ISR</button>
                       </li>
                       <li class="nav-item flex-fill" role="presentation">
-                        <button class="nav-link" id="pills-iva-tab" data-bs-toggle="pill" data-bs-target="#pills-iva" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">IVA</button>
+                        <button class="nav-link" id="pills-iva-tab" data-bs-toggle="pill" data-bs-target="#pills-iva" type="button" role="tab" aria-controls="pills-iva" aria-selected="false">IVA</button>
                       </li>
                       <li class="nav-item flex-fill" role="presentation">
-                        <button class="nav-link" id="pills-retisr-tab" data-bs-toggle="pill" data-bs-target="#pills-retisr" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Retenciones ISR</button>
+                        <button class="nav-link" id="pills-retisr-tab" data-bs-toggle="pill" data-bs-target="#pills-retisr" type="button" role="tab" aria-controls="pills-retisr" aria-selected="false">Retenciones ISR / IVA</button>
                       </li>
-                      <li class="nav-item flex-fill" role="presentation">
+<!--                       <li class="nav-item flex-fill" role="presentation">
                           <button class="nav-link w-100" id="pills-retiva-tab" data-bs-toggle="pill" data-bs-target="#pills-retiva" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Retenciones IVA</button>
-                        </li>                        
+                        </li>   -->                      
                         <li class="nav-item flex-fill" role="presentation">
                           <button class="nav-link w-100" id="pills-nom-tab" data-bs-toggle="pill" data-bs-target="#pills-nom" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Nomina</button>
                         </li>
@@ -225,52 +229,83 @@ if (@!$_SESSION['usuario'])
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">
 
-                      <!-- Tab interno de IVA-->
+<!-- Tab interno de IVA-->
+                    <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">                    
                       <div class="card">
                         <div class="card-body">                          
-                          <!-- Default Tabs -->
-                          <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
-                            <li class="nav-item flex-fill" role="presentation">
-                              <button class="nav-link w-100 active text-bg-warning" id="partev-tab" data-bs-toggle="tab" data-bs-target="#partev" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
-                            </li>
-                            <li class="nav-item flex-fill" role="presentation">
-                              <button class="nav-link w-100 text-bg-warning" id="partevv-tab" data-bs-toggle="tab" data-bs-target="#partevv" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
-                            </li>
-                            <li class="nav-item flex-fill" role="presentation">
-                              <button class="nav-link w-100 text-bg-warning" id="partevvv-tab" data-bs-toggle="tab" data-bs-target="#partevvv" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
-                            </li>
-                          </ul>
-                          <div class="tab-content pt-0" id="myTabjustifiedContent">
-                            <div class="tab-pane fade show active" id="partev" role="tabpanel" aria-labelledby="partev-tab">
-                              <!-- <?php include "includes/cap-old-ivap1.php"; ?>                                                               -->
-                            </div>
-                            <div class="tab-pane fade" id="partevv" role="tabpanel" aria-labelledby="partevv-tab">
-                              <?php include "includes/cap-old-ivap2.php"; ?>
-                            </div>
-                            <div class="tab-pane fade" id="partevvv" role="tabpanel" aria-labelledby="partevvv-tab">                           
-                              <?php include "includes/cap-old-ivap3.php"; ?>
-                            </div>
-                          </div><!-- End Default Tabs -->
-
-                        </div>
+                            <!-- Default Tabs -->
+                            <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+                              <li class="nav-item flex-fill" role="presentation">
+                                <button class="nav-link w-100 active text-bg-warning" id="partev-tab" data-bs-toggle="tab" data-bs-target="#partev" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                              </li>
+                              <li class="nav-item flex-fill" role="presentation">
+                                <button class="nav-link w-100 text-bg-warning" id="partevv-tab" data-bs-toggle="tab" data-bs-target="#partevv" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                              </li>
+                              <li class="nav-item flex-fill" role="presentation">
+                                <button class="nav-link w-100 text-bg-warning" id="partevvv-tab" data-bs-toggle="tab" data-bs-target="#partevvv" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
+                              </li>
+                            </ul>
+                            <div class="tab-content pt-0" id="myTabjustifiedContent">
+                              <div class="tab-pane fade show active" id="partev" role="tabpanel" aria-labelledby="partev-tab">
+                                <!-- <?php include "includes/cap-old-ivap1.php"; ?>                                                               -->
+                              </div>
+                              <div class="tab-pane fade" id="partevv" role="tabpanel" aria-labelledby="partevv-tab">
+                                <?php include "includes/cap-old-ivap2.php"; ?>
+                              </div>
+                              <div class="tab-pane fade" id="partevvv" role="tabpanel" aria-labelledby="partevvv-tab">                           
+                                <?php include "includes/cap-old-ivap3.php"; ?>
+                              </div>
+                            </div><!-- End Default Tabs -->
+                         </div>
                       </div>
 
-                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
                           <i class="bi bi-exclamation-triangle me-1"></i>
                           Verificar que los datos sean correctos!
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
+                        </div>
+                    </div>
 
-
-
-
-                      </div>
-
-
+<!-- Tab interno de RET-->
                       <div class="tab-pane fade" id="pills-retisr" role="tabpanel" aria-labelledby="retisr-tab">
+
+                      <div class="card">
+                        <div class="card-body">                          
+                            <!-- Default Tabs -->
+                            <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+                              <li class="nav-item flex-fill" role="presentation">
+                                <button class="nav-link w-100 active text-bg-info" id="parter-tab" data-bs-toggle="tab" data-bs-target="#parter" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                              </li>
+                              <li class="nav-item flex-fill" role="presentation">
+                                <button class="nav-link w-100 text-bg-info" id="parterr-tab" data-bs-toggle="tab" data-bs-target="#parterr" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                              </li>
+                            </ul>
+                            <div class="tab-content pt-0" id="myTabjustifiedContent">
+                              <div class="tab-pane fade show active" id="parter" role="tabpanel" aria-labelledby="parter-tab">
+                                <!-- <?php include "includes/cap-old-retp1.php"; ?>                                                               -->
+                              </div>
+                              <div class="tab-pane fade" id="parterr" role="tabpanel" aria-labelledby="parterr-tab">
+                                <?php include "includes/cap-old-retp2.php"; ?>
+                              </div>                              
+                            </div><!-- End Default Tabs -->
+                         </div>
+                      </div>
+
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          <i class="bi bi-exclamation-triangle me-1"></i>
+                          Verificar que los datos sean correctos!
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+
+
+
                         Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
+
+
+
+
                       </div>
                     </div><!-- End Pills Tabs -->
 

@@ -1,7 +1,7 @@
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
     <div class="copyright">
-    &copy; Copyright <strong><span>APC Accounting Services, </span></strong>Powered Dmakes SA de CV - Todos los derechos Reservados
+    &copy; Copyright <strong><span>APC Accounting Services, </span></strong>Powered Dmakes S. de R.L. de C.V. - Todos los derechos Reservados
     </div>
     <div class="credits">     
         Diseñado por <a href="https://dmakes.mx/">MTI. Rubén A. Hernández G.</a>

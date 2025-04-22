@@ -149,7 +149,7 @@ public function setcapis( $capis)
         
         $sqlhelper = new Sql();
         $sqlhelper->conectar();   //WHERE anio =".$anio." and id_em =".$id_em
-        $sql = "SELECT mes, k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
+        $sql = "SELECT mes, k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,k27,k28,k29,k30,k31,k32,k33,k34,k35,k36,id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
         $resultado = $sqlhelper->getmysqli()->query($sql);
        // $captura_arreglo = $resultado->fetch_assoc();
         $capturas = array();
@@ -227,7 +227,7 @@ public function setcapis( $capis)
   {
 
     $this->conectar();       
-      // For trabajando al 100 probando el implode
+      // 
 
     //if ($this->capis[0][18] == "i") // Genera registros para ISR
     //{   
@@ -236,7 +236,7 @@ public function setcapis( $capis)
             
       $sql = "INSERT INTO captura(mes,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,id_em, anio, id_tipo, id_mes, estatus) VALUES 
         (
-      '".$this->capis[$row][0]."','".$this->capis[$row][1]."','".$this->capis[$row][2]."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."',
+      '".$this->capis[$row][0]."','".$this->capis[$row][1]."','".strval($this->capis[$row][2])."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."',
       '".$this->capis[$row][6]."','".$this->capis[$row][7]."','".$this->capis[$row][8]."','".$this->capis[$row][9]."','".$this->capis[$row][10]."','".$this->capis[$row][11]."',
       '".$this->capis[$row][12]."','".$this->capis[$row][13]."','".$this->capis[$row][14]."','".$this->capis[$row][16]."','".$this->capis[$row][17]."','".$this->capis[$row][18]."',
       '".$this->capis[$row][19]."','".$this->capis[$row][20]."','".$this->capis[$row][21]."','".$this->capis[$row][22]."','".$this->capis[$row][23]."','".$this->capis[$row][24]."',
@@ -310,37 +310,59 @@ public function setcapis( $capis)
    // var_dump($lanio);
    // var_dump($lid_em);
 
+
+  //  ob_flush();
+  //  ob_start();
+
+  //  var_dump($this->capis);
+
+  //  file_put_contents("dump2.txt", ob_get_flush());
+
+
+
+
     $this->conectar();
     //$sql = "UPDATE empresas SET estatus ='INACTIVO' WHERE id = ".$this->id_em;
     for ($row = 0; $row < 12; $row++)
     {  
     $sql = "UPDATE captura SET 
-     k1 ='".$this->capis[$row][1]."', 
-     k2 ='".$this->capis[$row][2]."', 
-     k3 ='".$this->capis[$row][3]."', 
-     k4 ='".$this->capis[$row][4]."', 
-     k5 ='".$this->capis[$row][5]."',
-     k6 ='".$this->capis[$row][6]."', 
-     k7 ='".$this->capis[$row][7]."', 
-     k8 ='".$this->capis[$row][8]."', 
-     k9 ='".$this->capis[$row][9]."', 
-     k10 ='".$this->capis[$row][10]."',
-     k11 ='".$this->capis[$row][11]."', 
-     k12 ='".$this->capis[$row][12]."', 
-     k13 ='".$this->capis[$row][13]."', 
-     k14 ='".$this->capis[$row][14]."', 
+     k1 ='".str_replace(",","",$this->capis[$row][1])."', 
+     k2 ='".str_replace(",","",$this->capis[$row][2])."', 
+     k3 ='".str_replace(",","",$this->capis[$row][3])."', 
+     k4 ='".str_replace(",","",$this->capis[$row][4])."', 
+     k5 ='".str_replace(",","",$this->capis[$row][5])."',
+     k6 ='".str_replace(",","",$this->capis[$row][6])."', 
+     k7 ='".str_replace(",","",$this->capis[$row][7])."', 
+     k8 ='".str_replace(",","",$this->capis[$row][8])."', 
+     k9 ='".str_replace(",","",$this->capis[$row][9])."', 
+     k10 ='".str_replace(",","",$this->capis[$row][10])."',
+     k11 ='".str_replace(",","",$this->capis[$row][11])."', 
+     k12 ='".str_replace(",","",$this->capis[$row][12])."', 
+     k13 ='".str_replace(",","",$this->capis[$row][13])."', 
+     k14 ='".str_replace(",","",$this->capis[$row][14])."', 
      k15 ='".$this->capis[$row][15]."',
-     k16 ='".$this->capis[$row][18]."',
-     k17 ='".$this->capis[$row][17]."',
-     k18 ='".$this->capis[$row][18]."',
-     k19 ='".$this->capis[$row][19]."',
-     k20 ='".$this->capis[$row][20]."',
-     k21 ='".$this->capis[$row][21]."',
-     k22 ='".$this->capis[$row][22]."',
-     k23 ='".$this->capis[$row][23]."',
-     k24 ='".$this->capis[$row][24]."',
-     k25 ='".$this->capis[$row][25]."',
-     k26 ='".$this->capis[$row][26]."'
+     k16 ='".str_replace(",","",$this->capis[$row][16])."',
+     k17 ='".str_replace(",","",$this->capis[$row][17])."',
+     k18 ='".str_replace(",","",$this->capis[$row][18])."',
+     k19 ='".str_replace(",","",$this->capis[$row][19])."',
+     k20 ='".str_replace(",","",$this->capis[$row][20])."',
+     k21 ='".str_replace(",","",$this->capis[$row][21])."',
+     k22 ='".str_replace(",","",$this->capis[$row][22])."',
+     k23 ='".str_replace(",","",$this->capis[$row][23])."',
+     k24 ='".str_replace(",","",$this->capis[$row][24])."',
+     k25 ='".str_replace(",","",$this->capis[$row][25])."',
+     k26 ='".$this->capis[$row][26]."',
+     k27 ='".str_replace(",","",$this->capis[$row][27])."',
+     k28 ='".str_replace(",","",$this->capis[$row][28])."',
+     k29 ='".str_replace(",","",$this->capis[$row][29])."',
+     k30 ='".str_replace(",","",$this->capis[$row][30])."',
+     k31 ='".$this->capis[$row][31]."',
+     k32 ='".str_replace(",","",$this->capis[$row][32])."',
+     k33 ='".str_replace(",","",$this->capis[$row][33])."',
+     k34 ='".str_replace(",","",$this->capis[$row][34])."',
+     k35 ='".str_replace(",","",$this->capis[$row][35])."',
+     k36 ='".$this->capis[$row][36]."'
+         
 
      WHERE id_em = ".$lid_em." and anio = ".$lanio." and mes = '".$this->capis[$row][0]."'";
      echo "<br>";

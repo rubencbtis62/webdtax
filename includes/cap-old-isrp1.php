@@ -36,11 +36,11 @@
                         // var_dump($capis[0][0]);
                             
                         for ($row = 0; $row < 12; $row++) {  
-                            echo '<input type="hidden" name="capis['.$row.'][27]" value="'.$id_em.'">'; //id_em id empresa  
-                            echo '<input type="hidden" name="capis['.$row.'][28]" value="'.$anio.'">'; //anio ejerciciio  
-                            echo '<input type="hidden" name="capis['.$row.'][29]" value="i">'; //id_tipo captura
-                            echo '<input type="hidden" name="capis['.$row.'][31]" value="1">'; //estatus}
-                            echo '<input type="hidden" name="capis['.$row.'][32]" value="NULL">'; //estatus}
+                            echo '<input type="hidden" name="capis['.$row.'][37]" value="'.$id_em.'">'; //id_em id empresa  
+                            echo '<input type="hidden" name="capis['.$row.'][38]" value="'.$anio.'">'; //anio ejerciciio  
+                            echo '<input type="hidden" name="capis['.$row.'][39]" value="i">'; //id_tipo captura
+                            echo '<input type="hidden" name="capis['.$row.'][41]" value="1">'; //estatus}
+                            echo '<input type="hidden" name="capis['.$row.'][42]" value="NULL">'; //estatus}
                             
                         }
                     ?> 
