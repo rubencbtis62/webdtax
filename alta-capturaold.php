@@ -89,7 +89,9 @@ if (@!$_SESSION['usuario'])
         $fila['k16'],$fila['k17'],$fila['k18'],$fila['k19'],$fila['k20'],
         $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],
         $fila['k26'],$fila['k27'],$fila['k28'],$fila['k29'],$fila['k30'],
-        $fila['k31'],$fila['k32'],$fila['k33'],$fila['k34'],$fila['k35'],$fila['k36']
+        $fila['k31'],$fila['k32'],$fila['k33'],$fila['k34'],$fila['k35'],
+        $fila['k36'],$fila['k37'],$fila['k38'],$fila['k39'],$fila['k40'],
+        $fila['k41'],$fila['k42']
 
       ));
         $sw = false; }
@@ -100,7 +102,9 @@ if (@!$_SESSION['usuario'])
         $fila['k16'],$fila['k17'],$fila['k18'],$fila['k19'],$fila['k20'],
         $fila['k21'],$fila['k22'],$fila['k23'],$fila['k24'],$fila['k25'],
         $fila['k26'],$fila['k27'],$fila['k28'],$fila['k29'],$fila['k30'],
-        $fila['k31'],$fila['k32'],$fila['k33'],$fila['k34'],$fila['k35'],$fila['k36']
+        $fila['k31'],$fila['k32'],$fila['k33'],$fila['k34'],$fila['k35'],
+        $fila['k36'],$fila['k37'],$fila['k38'],$fila['k39'],$fila['k40'],
+        $fila['k41'],$fila['k42']
       ); }
       
       //array_push($capis, $fila['mes'],$fila['k1'],$fila['k2'],$fila['k3'],$fila['k4'],$fila['k5']);
@@ -178,11 +182,11 @@ if (@!$_SESSION['usuario'])
                           <button class="nav-link w-100" id="pills-retiva-tab" data-bs-toggle="pill" data-bs-target="#pills-retiva" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Retenciones IVA</button>
                         </li>   -->                      
                         <li class="nav-item flex-fill" role="presentation">
-                          <button class="nav-link w-100" id="pills-nom-tab" data-bs-toggle="pill" data-bs-target="#pills-nom" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Nomina</button>
+                          <button class="nav-link w-100" id="pills-nom-tab" data-bs-toggle="pill" data-bs-target="#pills-nom" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Otros Impuestos</button>
                         </li>
-                        <li class="nav-item flex-fill" role="presentation">
+<!--                         <li class="nav-item flex-fill" role="presentation">
                           <button class="nav-link w-100" id="pills-hos-tab" data-bs-toggle="pill" data-bs-target="#pills-hos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Hospedaje</button>
-                        </li>                      
+                        </li>  -->                     
                     </ul>
                     <div class="tab-content pt-2" id="myTabContent">
                       <div class="tab-pane fade show active" id="pills-isr" role="tabpanel" aria-labelledby="isr-tab">
@@ -270,45 +274,90 @@ if (@!$_SESSION['usuario'])
 <!-- Tab interno de RET-->
                       <div class="tab-pane fade" id="pills-retisr" role="tabpanel" aria-labelledby="retisr-tab">
 
-                      <div class="card">
-                        <div class="card-body">                          
-                            <!-- Default Tabs -->
-                            <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
-                              <li class="nav-item flex-fill" role="presentation">
-                                <button class="nav-link w-100 active text-bg-info" id="parter-tab" data-bs-toggle="tab" data-bs-target="#parter" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
-                              </li>
-                              <li class="nav-item flex-fill" role="presentation">
-                                <button class="nav-link w-100 text-bg-info" id="parterr-tab" data-bs-toggle="tab" data-bs-target="#parterr" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
-                              </li>
-                            </ul>
-                            <div class="tab-content pt-0" id="myTabjustifiedContent">
-                              <div class="tab-pane fade show active" id="parter" role="tabpanel" aria-labelledby="parter-tab">
-                                <!-- <?php include "includes/cap-old-retp1.php"; ?>                                                               -->
-                              </div>
-                              <div class="tab-pane fade" id="parterr" role="tabpanel" aria-labelledby="parterr-tab">
-                                <?php include "includes/cap-old-retp2.php"; ?>
-                              </div>                              
-                            </div><!-- End Default Tabs -->
-                         </div>
-                      </div>
+                        <div class="card">
+                            <div class="card-body">                          
+                                <!-- Default Tabs -->
+                                <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+                                  <li class="nav-item flex-fill" role="presentation">
+                                    <button class="nav-link w-100 active text-bg-info" id="parter-tab" data-bs-toggle="tab" data-bs-target="#parter" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                                  </li>
+                                  <li class="nav-item flex-fill" role="presentation">
+                                    <button class="nav-link w-100 text-bg-info" id="parterr-tab" data-bs-toggle="tab" data-bs-target="#parterr" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                                  </li>
+                                </ul>
+                                <div class="tab-content pt-0" id="myTabjustifiedContent">
+                                  <div class="tab-pane fade show active" id="parter" role="tabpanel" aria-labelledby="parter-tab">
+                                    <!-- <?php include "includes/cap-old-retp1.php"; ?>                                                               -->
+                                  </div>
+                                  <div class="tab-pane fade" id="parterr" role="tabpanel" aria-labelledby="parterr-tab">
+                                    <?php include "includes/cap-old-retp2.php"; ?>
+                                  </div>                              
+                                </div><!-- End Default Tabs -->
+                            </div>
+                        </div>
 
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                           <i class="bi bi-exclamation-triangle me-1"></i>
                           Verificar que los datos sean correctos!
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-
-
-
-
-                        Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
-
-
-
-
+                        <p>
+                          Las personas obligadas a contribuir son todas aquellas que residan en México, radiquen en el extranjero y que tengan algún establecimiento en el país, así como todos los residentes en el extranjero que perciben ingresos de fuentes de riqueza en México. 
+                        </p>  
+                        </p>
+                          El porcentaje de retención se mide de acuerdo con las ganancias de cada contribuyente; por lo tanto, la retención por mes va desde 1.92%, hasta 35% al mes. El Servicio de Administración Tributaria (SAT) cuenta con una tabla de retenciones del impuesto sobre la renta. 
+                        </p>
                       </div>
-                    </div><!-- End Pills Tabs -->
 
+
+<!-- Tab interno de otros Impuestos-->
+                      <div class="tab-pane fade" id="pills-nom" role="tabpanel" aria-labelledby="nom-tab">
+
+                      <div class="card">
+                          <div class="card-body">                          
+                              <!-- Default Tabs -->
+                              <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+                                <li class="nav-item flex-fill" role="presentation">
+                                  <button class="nav-link w-100 active text-bg-primary" id="parten-tab" data-bs-toggle="tab" data-bs-target="#parten" type="button" role="tab" aria-controls="home" aria-selected="true">Impuestos Nomina</button>
+                                </li>
+                                <li class="nav-item flex-fill" role="presentation">
+                                  <button class="nav-link w-100 text-bg-primary" id="parterr-tab" data-bs-toggle="tab" data-bs-target="#partenn" type="button" role="tab" aria-controls="profile" aria-selected="false">Impuestos Hospedaje</button>
+                                </li>
+                              </ul>
+                              <div class="tab-content pt-0" id="myTabjustifiedContent">
+                                <div class="tab-pane fade show active" id="parten" role="tabpanel" aria-labelledby="parten-tab">
+                                  <!-- <?php include "includes/cap-old-nomp1.php"; ?>                                                               -->
+                                </div>
+                                <div class="tab-pane fade" id="partenn" role="tabpanel" aria-labelledby="partenn-tab">
+                                  <?php include "includes/cap-old-nomp2.php"; ?>
+                                </div>                              
+                              </div><!-- End Default Tabs -->
+                          </div>
+                      </div>
+
+                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-triangle me-1"></i>
+                        Verificar que los datos sean correctos!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                      <p>
+                        Las personas obligadas a contribuir son todas aquellas que residan en México, radiquen en el extranjero y que tengan algún establecimiento en el país, así como todos los residentes en el extranjero que perciben ingresos de fuentes de riqueza en México. 
+                      </p>  
+                      </p>
+                        El porcentaje de retención se mide de acuerdo con las ganancias de cada contribuyente; por lo tanto, la retención por mes va desde 1.92%, hasta 35% al mes. El Servicio de Administración Tributaria (SAT) cuenta con una tabla de retenciones del impuesto sobre la renta. 
+                      </p>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+                    </div><!-- End Pills Tabs -->
                   </div>
                 </div>
                   

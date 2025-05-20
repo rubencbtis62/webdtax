@@ -149,7 +149,7 @@ public function setcapis( $capis)
         
         $sqlhelper = new Sql();
         $sqlhelper->conectar();   //WHERE anio =".$anio." and id_em =".$id_em
-        $sql = "SELECT mes, k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,k27,k28,k29,k30,k31,k32,k33,k34,k35,k36,id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
+        $sql = "SELECT mes, k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,k27,k28,k29,k30,k31,k32,k33,k34,k35,k36,k37,k38,k39,k40,k41,k42,id_em, anio, id_tipo, id_mes, estatus FROM captura WHERE anio =".$anio." and id_em =".$id_em;
         $resultado = $sqlhelper->getmysqli()->query($sql);
        // $captura_arreglo = $resultado->fetch_assoc();
         $capturas = array();
@@ -187,7 +187,40 @@ public function setcapis( $capis)
     //  }  
      
   
+    /* Funcion Guardar */       
+    public function guardararraynpf()
+    {
   
+     $this->conectar();       
+     // For trabajando al 100 probando el implode
+  
+     $json_arreglo = json_encode($this->capis);
+  
+     ob_flush();
+     ob_start();
+  
+     var_dump($this->capis);
+  
+     file_put_contents("dump.txt", ob_get_flush());
+  
+     for ($row = 0; $row < 12; $row++)
+      {               
+          
+        $sql = "INSERT INTO captura(mes,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26, id_em, anio, id_tipo, id_mes, estatus) VALUES 
+         ('$json_arreglo')";
+      
+        $resultado = $this->mysqli->query($sql);
+  
+      }
+     
+  
+      unset($this->$capis);
+      $sql = $this->mysqli->close();
+     // $resultado = $this->mysqli->close();
+                   
+     } 
+
+
   /* Funcion Guardar */       
   public function guardararray()
   {
@@ -234,7 +267,7 @@ public function setcapis( $capis)
     for ($row = 0; $row < 12; $row++)
     {               
             
-      $sql = "INSERT INTO captura(mes,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,id_em, anio, id_tipo, id_mes, estatus) VALUES 
+      $sql = "INSERT INTO captura(mes,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,k27,k28,k29,k30,id_em, anio, id_tipo, id_mes, estatus) VALUES 
         (
       '".$this->capis[$row][0]."','".$this->capis[$row][1]."','".strval($this->capis[$row][2])."','".$this->capis[$row][3]."','".$this->capis[$row][4]."','".$this->capis[$row][5]."',
       '".$this->capis[$row][6]."','".$this->capis[$row][7]."','".$this->capis[$row][8]."','".$this->capis[$row][9]."','".$this->capis[$row][10]."','".$this->capis[$row][11]."',
@@ -361,7 +394,13 @@ public function setcapis( $capis)
      k33 ='".str_replace(",","",$this->capis[$row][33])."',
      k34 ='".str_replace(",","",$this->capis[$row][34])."',
      k35 ='".str_replace(",","",$this->capis[$row][35])."',
-     k36 ='".$this->capis[$row][36]."'
+     k36 ='".$this->capis[$row][36]."',
+     k37 ='".str_replace(",","",$this->capis[$row][37])."',
+     k38 ='".str_replace(",","",$this->capis[$row][38])."',
+     k39 ='".str_replace(",","",$this->capis[$row][39])."',
+     k40 ='".$this->capis[$row][40]."',
+     k41 ='".str_replace(",","",$this->capis[$row][41])."',
+     k42 ='".$this->capis[$row][42]."'
          
 
      WHERE id_em = ".$lid_em." and anio = ".$lanio." and mes = '".$this->capis[$row][0]."'";

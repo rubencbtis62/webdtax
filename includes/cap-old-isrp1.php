@@ -36,11 +36,11 @@
                         // var_dump($capis[0][0]);
                             
                         for ($row = 0; $row < 12; $row++) {  
-                            echo '<input type="hidden" name="capis['.$row.'][37]" value="'.$id_em.'">'; //id_em id empresa  
-                            echo '<input type="hidden" name="capis['.$row.'][38]" value="'.$anio.'">'; //anio ejerciciio  
-                            echo '<input type="hidden" name="capis['.$row.'][39]" value="i">'; //id_tipo captura
-                            echo '<input type="hidden" name="capis['.$row.'][41]" value="1">'; //estatus}
-                            echo '<input type="hidden" name="capis['.$row.'][42]" value="NULL">'; //estatus}
+                            echo '<input type="hidden" name="capis['.$row.'][43]" value="'.$id_em.'">'; //id_em id empresa  
+                            echo '<input type="hidden" name="capis['.$row.'][44]" value="'.$anio.'">'; //anio ejerciciio  
+                            echo '<input type="hidden" name="capis['.$row.'][45]" value="i">'; //id_tipo captura
+                            echo '<input type="hidden" name="capis['.$row.'][47]" value="1">'; //estatus}
+                            echo '<input type="hidden" name="capis['.$row.'][48]" value="NULL">'; //estatus}
                             
                         }
                     ?> 
@@ -50,7 +50,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Enero</label>
                             <input type="hidden" name="capis[0][0]" value="ene">
-                            <input type="hidden" name="capis[0][30]" value="1">
+                            <input type="hidden" name="capis[0][46]" value="1">
                             <!-- <input type="hidden" name="capis[0][1]" value="<?= $lcapis[0][1]; ?>"> -->
                             <!-- <input type="hidden" name="capis[0][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[0][7]" value="<?= $id_em; ?>"> -->
@@ -76,7 +76,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Febrero</label>
                             <input type="hidden" name="capis[1][0]" value="feb">
-                            <input type="hidden" name="capis[1][30]" value="2">
+                            <input type="hidden" name="capis[1][46]" value="2">
                             <!-- <input type="hidden" name="capis[1][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[1][7]" value="<?= $id_em; ?>">                                       -->
                         </div>                                       
@@ -101,7 +101,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Marzo</label>
                             <input type="hidden" name="capis[2][0]" value="mar">
-                            <input type="hidden" name="capis[2][30]" value="3">
+                            <input type="hidden" name="capis[2][46]" value="3">
                             <!-- <input type="hidden" name="capis[2][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[2][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -126,7 +126,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Abril</label>
                             <input type="hidden" name="capis[3][0]" value="abr">
-                            <input type="hidden" name="capis[3][30]" value="4">
+                            <input type="hidden" name="capis[3][46]" value="4">
                             <!-- <input type="hidden" name="capis[3][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[3][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -151,7 +151,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Mayo</label>
                             <input type="hidden" name="capis[4][0]" value="may">
-                            <input type="hidden" name="capis[4][30]" value="5">
+                            <input type="hidden" name="capis[4][46]" value="5">
                             <!-- <input type="hidden" name="capis[4][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[4][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -176,7 +176,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Junio</label>
                             <input type="hidden" name="capis[5][0]" value="jun">
-                            <input type="hidden" name="capis[5][30]" value="6">
+                            <input type="hidden" name="capis[5][46]" value="6">
                             <!-- <input type="hidden" name="capis[5][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[5][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -203,7 +203,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Julio</label>
                             <input type="hidden" name="capis[6][0]" value="jul">
-                            <input type="hidden" name="capis[6][30]" value="7">
+                            <input type="hidden" name="capis[6][46]" value="7">
                             <!-- <input type="hidden" name="capis[6][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[6][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -228,7 +228,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Agosto</label>
                             <input type="hidden" name="capis[7][0]" value="ago">
-                            <input type="hidden" name="capis[7][30]" value="8">
+                            <input type="hidden" name="capis[7][46]" value="8">
                             <!-- <input type="hidden" name="capis[7][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[7][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -253,7 +253,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Septiembre</label>
                             <input type="hidden" name="capis[8][0]" value="sep">
-                            <input type="hidden" name="capis[8][30]" value="9">
+                            <input type="hidden" name="capis[8][46]" value="9">
                             <!-- <input type="hidden" name="capis[8][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[8][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -278,7 +278,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Octubre</label>
                             <input type="hidden" name="capis[9][0]" value="oct">
-                            <input type="hidden" name="capis[9][30]" value="10">
+                            <input type="hidden" name="capis[9][46]" value="10">
                             <!-- <input type="hidden" name="capis[9][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[9][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -303,7 +303,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Noviembre</label>
                             <input type="hidden" name="capis[10][0]" value="nov">
-                            <input type="hidden" name="capis[10][30]" value="11">
+                            <input type="hidden" name="capis[10][46]" value="11">
                             <!-- <input type="hidden" name="capis[10][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[10][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       
@@ -328,7 +328,7 @@
                         <div class="col-sm-1">
                             <label class="col-form-label">Diciembre</label>
                             <input type="hidden" name="capis[11][0]" value="dic">
-                            <input type="hidden" name="capis[11][30]" value="12">
+                            <input type="hidden" name="capis[11][46]" value="12">
                             <!-- <input type="hidden" name="capis[11][6]" value="<?= $anio; ?>"> -->
                             <!-- <input type="hidden" name="capis[11][7]" value="<?= $id_em; ?>"> -->
                         </div>                                       

@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
        $captura = new captura();
        $captura->setcapis($capis);   
        
-       var_dump($capis);                 
+       //var_dump($capis);                 
        //$captura->guardar();
-       $captura->guardarnpf();
+       $captura->guardararraynpf();
        break;
 
         // for ($row = 0; $row < 12; $row++) {

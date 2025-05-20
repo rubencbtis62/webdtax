@@ -50,19 +50,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][16]"  VALUE="<?= $lcapis[0][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][16]"  VALUE="<?= number_format($lcapis[0][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][17]" VALUE="<?= $lcapis[0][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][17]" VALUE="<?= number_format($lcapis[0][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][18]" VALUE="<?= $lcapis[0][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][18]" VALUE="<?= number_format($lcapis[0][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][19]" VALUE="<?= $lcapis[0][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][19]" VALUE="<?= number_format($lcapis[0][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[0][20]" VALUE="<?= $lcapis[0][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[0][20]" VALUE="<?= number_format($lcapis[0][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -72,19 +72,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][16]" placeholder="0.00"   VALUE="<?= $lcapis[1][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][16]" VALUE="<?= number_format($lcapis[1][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][17]" placeholder="0.00"   VALUE="<?= $lcapis[1][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][17]" VALUE="<?= number_format($lcapis[1][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][18]" placeholder="0.00"   VALUE="<?= $lcapis[1][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][18]" VALUE="<?= number_format($lcapis[1][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[1][19]" placeholder="0.00"   VALUE="<?= $lcapis[1][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[1][19]" VALUE="<?= number_format($lcapis[1][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end"  name="capis[1][20]" placeholder="0.00"   VALUE="<?= $lcapis[1][20]; ?>">
+                            <input type="text" class="form-control text-end"  name="capis[1][20]" VALUE="<?= number_format($lcapis[1][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -95,19 +95,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][16]" placeholder="0.00"   VALUE="<?= $lcapis[2][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][16]" VALUE="<?= number_format($lcapis[2][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][17]" placeholder="0.00"   VALUE="<?= $lcapis[2][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][17]" VALUE="<?= number_format($lcapis[2][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][18]" placeholder="0.00"   VALUE="<?= $lcapis[2][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][18]" VALUE="<?= number_format($lcapis[2][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][19]" placeholder="0.00"   VALUE="<?= $lcapis[2][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][19]" VALUE="<?= number_format($lcapis[2][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[2][20]" placeholder="0.00"   VALUE="<?= $lcapis[2][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[2][20]" VALUE="<?= number_format($lcapis[2][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -117,19 +117,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][16]" placeholder="0.00"   VALUE="<?= $lcapis[3][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][16]" VALUE="<?= number_format($lcapis[3][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][17]" placeholder="0.00"   VALUE="<?= $lcapis[3][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][17]" VALUE="<?= number_format($lcapis[3][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][18]" placeholder="0.00"   VALUE="<?= $lcapis[3][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][18]" VALUE="<?= number_format($lcapis[3][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][19]" placeholder="0.00"   VALUE="<?= $lcapis[3][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][19]" VALUE="<?= number_format($lcapis[3][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[3][20]" placeholder="0.00"   VALUE="<?= $lcapis[3][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[3][20]" VALUE="<?= number_format($lcapis[3][20], 2, '.', ','); ?>">
                         </div>
                     </div>
                     
@@ -140,19 +140,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][16]" placeholder="0.00"   VALUE="<?= $lcapis[4][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][16]" VALUE="<?= number_format($lcapis[4][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][17]" placeholder="0.00"   VALUE="<?= $lcapis[4][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][17]" VALUE="<?= number_format($lcapis[4][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][18]" placeholder="0.00"   VALUE="<?= $lcapis[4][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][18]" VALUE="<?= number_format($lcapis[4][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][19]" placeholder="0.00"   VALUE="<?= $lcapis[4][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][19]" VALUE="<?= number_format($lcapis[4][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[4][20]" placeholder="0.00"   VALUE="<?= $lcapis[4][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[4][20]" VALUE="<?= number_format($lcapis[4][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -163,19 +163,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][16]" placeholder="0.00"   VALUE="<?= $lcapis[5][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][16]" VALUE="<?= number_format($lcapis[5][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][17]" placeholder="0.00"   VALUE="<?= $lcapis[5][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][17]" VALUE="<?= number_format($lcapis[5][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][18]" placeholder="0.00"   VALUE="<?= $lcapis[5][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][18]" VALUE="<?= number_format($lcapis[5][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][19]" placeholder="0.00"   VALUE="<?= $lcapis[5][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][19]" VALUE="<?= number_format($lcapis[5][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[5][20]" placeholder="0.00"   VALUE="<?= $lcapis[5][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[5][20]" VALUE="<?= number_format($lcapis[5][20], 2, '.', ','); ?>">
                         </div>
                     </div>
                     
@@ -187,19 +187,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][16]" placeholder="0.00"   VALUE="<?= $lcapis[6][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][16]" VALUE="<?= number_format($lcapis[6][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][17]" placeholder="0.00"   VALUE="<?= $lcapis[6][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][17]" VALUE="<?= number_format($lcapis[6][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][18]" placeholder="0.00"   VALUE="<?= $lcapis[6][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][18]" VALUE="<?= number_format($lcapis[6][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][19]" placeholder="0.00"   VALUE="<?= $lcapis[6][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][19]" VALUE="<?= number_format($lcapis[6][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[6][20]" placeholder="0.00"   VALUE="<?= $lcapis[6][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[6][20]" VALUE="<?= number_format($lcapis[6][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -208,19 +208,19 @@
                             <label class="col-form-label">Agosto</label>
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][16]" placeholder="0.00"   VALUE="<?= $lcapis[7][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][16]" VALUE="<?= number_format($lcapis[7][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][17]" placeholder="0.00"   VALUE="<?= $lcapis[7][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][17]" VALUE="<?= number_format($lcapis[7][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][18]" placeholder="0.00"   VALUE="<?= $lcapis[7][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][18]" VALUE="<?= number_format($lcapis[7][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][19]" placeholder="0.00"   VALUE="<?= $lcapis[7][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][19]" VALUE="<?= number_format($lcapis[7][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[7][20]" placeholder="0.00"   VALUE="<?= $lcapis[7][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[7][20]" VALUE="<?= number_format($lcapis[7][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -230,19 +230,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][16]" placeholder="0.00"   VALUE="<?= $lcapis[8][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][16]" VALUE="<?= number_format($lcapis[8][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][17]" placeholder="0.00"   VALUE="<?= $lcapis[8][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][17]" VALUE="<?= number_format($lcapis[8][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][18]" placeholder="0.00"   VALUE="<?= $lcapis[8][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][18]" VALUE="<?= number_format($lcapis[8][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][19]" placeholder="0.00"   VALUE="<?= $lcapis[8][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][19]" VALUE="<?= number_format($lcapis[8][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[8][20]" placeholder="0.00"   VALUE="<?= $lcapis[8][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[8][20]" VALUE="<?= number_format($lcapis[8][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -252,19 +252,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][16]" placeholder="0.00"   VALUE="<?= $lcapis[9][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][16]" VALUE="<?= number_format($lcapis[9][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][17]" placeholder="0.00"   VALUE="<?= $lcapis[9][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][17]" VALUE="<?= number_format($lcapis[9][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][18]" placeholder="0.00"   VALUE="<?= $lcapis[9][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][18]" VALUE="<?= number_format($lcapis[9][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][19]" placeholder="0.00"   VALUE="<?= $lcapis[9][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][19]" VALUE="<?= number_format($lcapis[9][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[9][20]" placeholder="0.00"   VALUE="<?= $lcapis[9][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[9][20]" VALUE="<?= number_format($lcapis[9][20], 2, '.', ','); ?>">
                         </div>
                     </div>
                     
@@ -274,19 +274,19 @@
 
                         </div>                                       
                         <div class="col-sm-2">                                    
-                            <input type="text" class="form-control text-end" name="capis[10][16]" placeholder="0.00"   VALUE="<?= $lcapis[10][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][16]" VALUE="<?= number_format($lcapis[10][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][17]" placeholder="0.00"   VALUE="<?= $lcapis[10][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][17]" VALUE="<?= number_format($lcapis[10][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][18]" placeholder="0.00"   VALUE="<?= $lcapis[10][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][18]" VALUE="<?= number_format($lcapis[10][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][19]" placeholder="0.00"   VALUE="<?= $lcapis[10][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][19]" VALUE="<?= number_format($lcapis[10][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[10][20]" placeholder="0.00"   VALUE="<?= $lcapis[10][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[10][20]" VALUE="<?= number_format($lcapis[10][20], 2, '.', ','); ?>">
                         </div>
                     </div>
 
@@ -295,19 +295,19 @@
                             <label class="col-form-label">Diciembre</label>
                         </div>                                       
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][16]" placeholder="0.00"   VALUE="<?= $lcapis[11][16]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][16]" VALUE="<?= number_format($lcapis[11][16], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][17]" placeholder="0.00"   VALUE="<?= $lcapis[11][17]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][17]" VALUE="<?= number_format($lcapis[11][17], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][18]" placeholder="0.00"   VALUE="<?= $lcapis[11][18]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][18]" VALUE="<?= number_format($lcapis[11][18], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][19]" placeholder="0.00"   VALUE="<?= $lcapis[11][19]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][19]" VALUE="<?= number_format($lcapis[11][19], 2, '.', ','); ?>">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control text-end" name="capis[11][20]" placeholder="0.00"   VALUE="<?= $lcapis[11][20]; ?>">
+                            <input type="text" class="form-control text-end" name="capis[11][20]" VALUE="<?= number_format($lcapis[11][20], 2, '.', ','); ?>">
                         </div>
                     </div>
                                               
