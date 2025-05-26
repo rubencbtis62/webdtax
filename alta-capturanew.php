@@ -116,17 +116,17 @@ if (@!$_SESSION['usuario'])
                               <button class="nav-link text-success" id="pills-iva-tab" data-bs-toggle="pill" data-bs-target="#pills-iva" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">IVA</button>
                             </li>
                             <li class="nav-item flex-fill" role="presentation">
-                              <button class="nav-link" id="pills-retisr-tab" data-bs-toggle="pill" data-bs-target="#pills-retisr" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Retenciones ISR</button>
+                              <button class="nav-link" id="pills-retisr-tab" data-bs-toggle="pill" data-bs-target="#pills-retisr" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Retenciones ISR / IVA</button>
                             </li>
-                            <li class="nav-item flex-fill" role="presentation">
+<!--                             <li class="nav-item flex-fill" role="presentation">
                                 <button class="nav-link w-100" id="pills-retiva-tab" data-bs-toggle="pill" data-bs-target="#pills-retiva" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Retenciones IVA</button>
-                              </li>                        
+                              </li>  -->                       
                               <li class="nav-item flex-fill" role="presentation">
-                                <button class="nav-link w-100" id="pills-nom-tab" data-bs-toggle="pill" data-bs-target="#pills-nom" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp.S/ Nomina</button>
+                                <button class="nav-link w-100" id="pills-nom-tab" data-bs-toggle="pill" data-bs-target="#pills-nom" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">otros Impuestos</button>
                               </li>
-                              <li class="nav-item flex-fill" role="presentation">
+<!--                               <li class="nav-item flex-fill" role="presentation">
                                 <button class="nav-link w-100" id="pills-hos-tab" data-bs-toggle="pill" data-bs-target="#pills-hos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Imp. S/ Hospedaje</button>
-                              </li>
+                              </li> -->
                         </ul>
                             <div class="tab-content pt-2" id="myTabContent">
                               <div class="tab-pane fade show active" id="pills-isr" role="tabpanel" aria-labelledby="isr-tab">
@@ -138,17 +138,17 @@ if (@!$_SESSION['usuario'])
                                     <!-- Default Tabs -->
                                       <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
                                         <li class="nav-item flex-fill" role="presentation">
-                                          <button class="nav-link w-100 active" id="partei-tab" data-bs-toggle="tab" data-bs-target="#partei" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                                          <button class="nav-link w-100 active text-bg-success" id="partei-tab" data-bs-toggle="tab" data-bs-target="#partei" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
                                         </li>
                                         <li class="nav-item flex-fill" role="presentation">
-                                          <button class="nav-link w-100" id="parteii-tab" data-bs-toggle="tab" data-bs-target="#parteii" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                                          <button class="nav-link w-100 text-bg-success" id="parteii-tab" data-bs-toggle="tab" data-bs-target="#parteii" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
                                         </li>
                                         <li class="nav-item flex-fill" role="presentation">
-                                          <button class="nav-link w-100" id="parteiii-tab" data-bs-toggle="tab" data-bs-target="#parteiii" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
+                                          <button class="nav-link w-100 text-bg-success" id="parteiii-tab" data-bs-toggle="tab" data-bs-target="#parteiii" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
                                         </li>
                                       </ul>
                                       <!-- LLamado de la captura parte I,II, III de ISR -->
-                                      <div class="tab-content pt-2" id="myTabjustifiedContent">
+                                      <div class="tab-content pt-0" id="myTabjustifiedContent">
                                           <div class="tab-pane fade show active" id="partei" role="tabpanel" aria-labelledby="partei-tab">
                                             <?php include "includes/cap-new-isrp1.php"; ?>                              
                                           </div>
@@ -166,29 +166,26 @@ if (@!$_SESSION['usuario'])
                                       Verificar que los datos sean correctos!
                                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                   </div>
-
-
-
                               </div>
-                              <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">
 
-                                <!-- Tab interno IVA -->
+            <!-- Tab interno IVA -->
+                              <div class="tab-pane fade" id="pills-iva" role="tabpanel" aria-labelledby="iva-tab">
                                 <div class="card">
                                   <div class="card-body">                          
                                     <!-- Default Tabs -->
                                       <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
                                         <li class="nav-item flex-fill" role="presentation">
-                                          <button class="nav-link w-100 active" id="partev-tab" data-bs-toggle="tab" data-bs-target="#partev" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                                          <button class="nav-link w-100 active text-bg-warning" id="partev-tab" data-bs-toggle="tab" data-bs-target="#partev" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
                                         </li>
                                         <li class="nav-item flex-fill" role="presentation">
-                                          <button class="nav-link w-100" id="partevv-tab" data-bs-toggle="tab" data-bs-target="#partevv" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                                          <button class="nav-link w-100 text-bg-warning" id="partevv-tab" data-bs-toggle="tab" data-bs-target="#partevv" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
                                         </li>
                                         <li class="nav-item flex-fill" role="presentation">
-                                          <button class="nav-link w-100" id="partevvv-tab" data-bs-toggle="tab" data-bs-target="#partevvv" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
+                                          <button class="nav-link w-100 text-bg-warning" id="partevvv-tab" data-bs-toggle="tab" data-bs-target="#partevvv" type="button" role="tab" aria-controls="contact" aria-selected="false">Parte III</button>
                                         </li>
                                       </ul>
                                       <!-- LLamado de la captura parte I,II, III de ISR -->
-                                      <div class="tab-content pt-2" id="myTabjustifiedContent">
+                                      <div class="tab-content pt-0" id="myTabjustifiedContent">
                                           <div class="tab-pane fade show active" id="partev" role="tabpanel" aria-labelledby="partev-tab">
                                             <?php include "includes/cap-new-ivap1.php"; ?>                              
                                           </div>
@@ -206,12 +203,37 @@ if (@!$_SESSION['usuario'])
                                       Verificar que los datos sean correctos!
                                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                   </div>
+                                </div>
 
 
-
-                              </div>
                               <div class="tab-pane fade" id="pills-retisr" role="tabpanel" aria-labelledby="retisr-tab">
-                                  Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
+                              <div class="card">
+                                  <div class="card-body">                          
+                                    <!-- Default Tabs -->
+                                      <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+                                        <li class="nav-item flex-fill" role="presentation">
+                                          <button class="nav-link w-100 active text-bg-info" id="partev-tab" data-bs-toggle="tab" data-bs-target="#parter" type="button" role="tab" aria-controls="home" aria-selected="true">Parte I</button>
+                                        </li>
+                                        <li class="nav-item flex-fill" role="presentation">
+                                          <button class="nav-link w-100 text-bg-info" id="partevv-tab" data-bs-toggle="tab" data-bs-target="#parterr" type="button" role="tab" aria-controls="profile" aria-selected="false">Parte II</button>
+                                        </li>
+                                      </ul>
+                                      <!-- LLamado de la captura parte I,II, III de ISR -->
+                                      <div class="tab-content pt-0" id="myTabjustifiedContent">
+                                          <div class="tab-pane fade show active" id="parter" role="tabpanel" aria-labelledby="parter-tab">
+                                            <?php include "includes/cap-new-retp1.php"; ?>                              
+                                          </div>
+                                          <div class="tab-pane fade" id="parterr" role="tabpanel" aria-labelledby="parterr-tab">
+                                            <?php include "includes/cap-new-retp2.php"; ?>
+                                          </div>                                          
+                                      </div><!-- End Default Tabs -->
+                                    </div>
+                                  </div>
+                                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                      <i class="bi bi-exclamation-triangle me-1"></i>
+                                      Verificar que los datos sean correctos!
+                                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
                               </div>
                           </div><!-- End Pills Tabs -->
                       </div>

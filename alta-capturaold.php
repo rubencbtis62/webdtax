@@ -252,7 +252,7 @@ if (@!$_SESSION['usuario'])
                             </ul>
                             <div class="tab-content pt-0" id="myTabjustifiedContent">
                               <div class="tab-pane fade show active" id="partev" role="tabpanel" aria-labelledby="partev-tab">
-                                <!-- <?php include "includes/cap-old-ivap1.php"; ?>                                                               -->
+                                 <?php include "includes/cap-old-ivap1.php"; ?>
                               </div>
                               <div class="tab-pane fade" id="partevv" role="tabpanel" aria-labelledby="partevv-tab">
                                 <?php include "includes/cap-old-ivap2.php"; ?>
